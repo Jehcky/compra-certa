@@ -260,11 +260,11 @@
                 </div>
                 <div class="text-center">
                     <ul class="pagination pagination-md">
-                        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                        <li class="page-item"><a class="page-link" href="#">Previous</li></a>
+                        <li class="page-item"><a class="page-link" href="#">1</li></a>
+                        <li class="page-item"><a class="page-link" href="#">2</li></a>
+                        <li class="page-item"><a class="page-link" href="#">3</li></a>
+                        <li class="page-item"><a class="page-link" href="#">Next</li></a>
                     </ul>
                 </div>
             </div>
@@ -277,17 +277,17 @@
                 <br>
                 <ul class="list-unstyled">
                     <h4>DEPARTAMENTOS</h4>
-                    <li class="menu-esq-botao"><a class="btn btn-button texto-cor-custom">Todas as Categorias</a></li><br>
-                    <li class="menu-esq-botao"><a class="btn btn-button texto-cor-custom">Bebidas</a></li><br>
-                    <li class="menu-esq-botao"><a class="btn btn-button texto-cor-custom">Beleza, Higiene e Saúde</a></li><br>
-                    <li class="menu-esq-botao"><a class="btn btn-button texto-cor-custom">Carnes e Embutidos</a></li><br>
-                    <li class="menu-esq-botao"><a class="btn btn-button texto-cor-custom">Chocolate, Doces e Guloseimas</a></li><br>
-                    <li class="menu-esq-botao"><a class="btn btn-button texto-cor-custom">Congelados</a></li><br>
-                    <li class="menu-esq-botao"><a class="btn btn-button texto-cor-custom">Frios e Laticínios</a></li><br>
-                    <li class="menu-esq-botao"><a class="btn btn-button texto-cor-custom">Horti-fruti</a></li><br>
-                    <li class="menu-esq-botao"><a class="btn btn-button texto-cor-custom">Limpeza</a></li><br>
-                    <li class="menu-esq-botao"><a class="btn btn-button texto-cor-custom">Padaria</a></li><br>
-                    <li class="menu-esq-botao"><a class="btn btn-button texto-cor-custom">Vinhos, Cervejas e Destilados</a></li><br>
+                    <a class="btn btn-button texto-cor-custom"><li class="menu-esq-botao">Todas as Categorias</li></a><br>
+                    <a class="btn btn-button texto-cor-custom"><li class="menu-esq-botao">Bebidas</li></a><br>
+                    <a class="btn btn-button texto-cor-custom"><li class="menu-esq-botao">Beleza, Higiene e Saúde</li></a><br>
+                    <a class="btn btn-button texto-cor-custom"><li class="menu-esq-botao">Carnes e Embutidos</li></a><br>
+                    <a class="btn btn-button texto-cor-custom"><li class="menu-esq-botao">Chocolate, Doces e Guloseimas</li></a><br>
+                    <a class="btn btn-button texto-cor-custom"><li class="menu-esq-botao">Congelados</li></a><br>
+                    <a class="btn btn-button texto-cor-custom"><li class="menu-esq-botao">Frios e Laticínios</li></a><br>
+                    <a class="btn btn-button texto-cor-custom"><li class="menu-esq-botao">Horti-fruti</li></a><br>
+                    <a class="btn btn-button texto-cor-custom"><li class="menu-esq-botao">Limpeza</li></a><br>
+                    <a class="btn btn-button texto-cor-custom"><li class="menu-esq-botao">Padaria</li></a><br>
+                    <a class="btn btn-button texto-cor-custom"><li class="menu-esq-botao">Vinhos, Cervejas e Destilados</li></a><br>
                     <li>
                         <div class="container">
                             <div class="checkbox">
@@ -298,7 +298,7 @@
                             </div>
                         </div>
                         
-                    </li>
+                </li>    
                 </ul>
             </div>
             
