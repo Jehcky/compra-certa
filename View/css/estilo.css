@@ -1,0 +1,95 @@
+.navbar {
+    margin-bottom: 50px;
+    border-radius: 0;
+}
+
+/* Remove a bottom-margin padrão do jumbotron */
+.jumbotron {
+     margin-bottom: 0; 
+} 
+
+/* Muda a font-family padrão da página */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+img { 
+    width: 100%;            /* Faz com que a imagem preencha todo o carousel */
+    margin: auto;
+}
+
+/* Alinha melhor os botões Comprar do painel de produtos */
+
+/*
+ Select para todos os h3 e p dentro da classe .carousel-caption 
+ para mudar o font-weight p visualizar melhor a legenda do carousel
+*/
+.carousel-caption h3 p {
+    font-weight: 700;
+}
+
+/* Classe de panels customizada para alterar as cores do panel */
+.panel-custom {
+    border-color:rgb(131, 2, 2);
+    height: 267px;
+}
+
+.panel-custom>.panel-heading {
+    color: #333333;
+    background-color: rgb(248, 248, 248);
+    border-color: rgb(131, 2, 2);
+}
+
+.panel-custom>.panel-heading+.panel-collapse>.panel-body {
+    border-top-color: rgb(131, 2, 2);
+}
+
+.panel-custom>.panel-heading .badge {
+    color: #f5f5f5;
+    background-color: #333333;
+}
+
+.panel-custom >.panel-footer+.panel-collapse>.panel-body {
+    border-bottom-color: rgb(131, 2, 2);
+}
+
+/* Define a altura máxima de uma imagem do painel de produtos e seta o width em auto 
+* para deixar a imagem em sua proporção original
+*/
+.panel img {
+    height: 100px;
+    width: auto;
+}
+
+.panel-heading {
+    height: 80px;
+    border: 0px;
+}
+
+.panel-footer {
+    padding-left: auto;
+    padding-right: auto;
+}
+
+.panel-button-comprar {
+    background-color: rgb(131, 2, 2);
+    color:  #f8f8f8;
+}
+
+.panel-nome-produto, .panel-preco-produto {
+    display: inline-block;
+}
+
+.panel-preco-produto {
+    color: rgb(131, 2, 2);
+    font-weight: 600;
+}
+
+
+/* Adiciona um plano de fundo cinza e padding ao footer */
+footer {
+    background-color: #f2f2f2;
+    padding: 25px;
+}
+
