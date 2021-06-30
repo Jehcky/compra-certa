@@ -20,8 +20,26 @@ img {
      margin-bottom: 0; 
 } 
 
-.menu-esq-botao {
+.texto-cor-custom {
     color:  rgb(131, 2, 2);
+}
+
+.texto-cor-custom:hover {
+    color:  rgb(255, 255, 255);
+}
+
+.menu-esq-botao {
+    text-align: left;
+    color:  rgb(131, 2, 2);
+    background-color: rgb(255, 255, 255);
+    width: 230px;
+}
+
+.menu-esq-botao:hover{
+    text-align: left;
+    color:  rgb(255, 255, 255);
+    background-color: rgb(131, 2, 2);
+    width: 230px;
 }
 
 /* Alinha melhor os botões Comprar do painel de produtos */
