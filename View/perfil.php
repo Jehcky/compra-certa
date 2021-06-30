@@ -214,7 +214,7 @@
                                         <br>
                                         <br>
                                         <br>
-                                        <a class="btn btn-button btn-danger">Cancelar</a> <a class="btn btn-button btn-success">Rastreiar</a> <a class="btn btn-button btn-primary">Repetir pedido</a>
+                                        <a class="btn btn-button btn-danger">Cancelar</a> <a class="btn btn-button btn-success">Rastrear</a> <a class="btn btn-button btn-primary">Repetir pedido</a>
                                     </div>
                                 </div>
                             </div>

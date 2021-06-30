@@ -277,17 +277,17 @@
                 <br>
                 <ul class="list-unstyled">
                     <h4>DEPARTAMENTOS</h4>
-                    <a class="btn btn-button texto-cor-custom"><li class="menu-esq-botao">Todas as Categorias</li></a><br>
-                    <a class="btn btn-button texto-cor-custom"><li class="menu-esq-botao">Bebidas</li></a><br>
-                    <a class="btn btn-button texto-cor-custom"><li class="menu-esq-botao">Beleza, Higiene e Saúde</li></a><br>
-                    <a class="btn btn-button texto-cor-custom"><li class="menu-esq-botao">Carnes e Embutidos</li></a><br>
-                    <a class="btn btn-button texto-cor-custom"><li class="menu-esq-botao">Chocolate, Doces e Guloseimas</li></a><br>
-                    <a class="btn btn-button texto-cor-custom"><li class="menu-esq-botao">Congelados</li></a><br>
-                    <a class="btn btn-button texto-cor-custom"><li class="menu-esq-botao">Frios e Laticínios</li></a><br>
-                    <a class="btn btn-button texto-cor-custom"><li class="menu-esq-botao">Horti-fruti</li></a><br>
-                    <a class="btn btn-button texto-cor-custom"><li class="menu-esq-botao">Limpeza</li></a><br>
-                    <a class="btn btn-button texto-cor-custom"><li class="menu-esq-botao">Padaria</li></a><br>
-                    <a class="btn btn-button texto-cor-custom"><li class="menu-esq-botao">Vinhos, Cervejas e Destilados</li></a><br>
+                    <a class="btn btn-button texto-cor-custom menu-esq-botao"><li class="">Todas as Categorias</li></a><br>
+                    <a class="btn btn-button texto-cor-custom menu-esq-botao"><li class="">Bebidas</li></a><br>
+                    <a class="btn btn-button texto-cor-custom menu-esq-botao"><li class="">Beleza, Higiene e Saúde</li></a><br>
+                    <a class="btn btn-button texto-cor-custom menu-esq-botao"><li class="">Carnes e Embutidos</li></a><br>
+                    <a class="btn btn-button texto-cor-custom menu-esq-botao"><li class="">Chocolate, Doces e Guloseimas</li></a><br>
+                    <a class="btn btn-button texto-cor-custom menu-esq-botao"><li class="">Congelados</li></a><br>
+                    <a class="btn btn-button texto-cor-custom menu-esq-botao"><li class="">Frios e Laticínios</li></a><br>
+                    <a class="btn btn-button texto-cor-custom menu-esq-botao"><li class="">Horti-fruti</li></a><br>
+                    <a class="btn btn-button texto-cor-custom menu-esq-botao"><li class="">Limpeza</li></a><br>
+                    <a class="btn btn-button texto-cor-custom menu-esq-botao"><li class="">Padaria</li></a><br>
+                    <a class="btn btn-button texto-cor-custom menu-esq-botao"><li class="">Vinhos, Cervejas e Destilados</li></a><br>
                     <li>
                         <div class="container">
                             <div class="checkbox">
