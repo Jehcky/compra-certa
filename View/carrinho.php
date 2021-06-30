@@ -5,36 +5,36 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th scope="col"> </th>
-                        <th scope="col">Product</th>
-                        <th scope="col">Available</th>
-                        <th scope="col" class="text-center">Quantity</th>
-                        <th scope="col" class="text-right">Price</th>
-                        <th> </th>
+                        <th></th>
+                        <th class="text-left">Produto</th>
+                        <th class="text-center">Disponibilidade</th>
+                        <th class="text-center">Quantidade</th>
+                        <th class="text-right">Preço</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td><img src="https://brf.my.salesforce.com/servlet/servlet.ImageServer?id=0154A000024CghlQAC&oid=00D410000012TJaEAM" style="width:75px;height:75px;"> </td>
+                        <td><img src="https://brf.my.salesforce.com/servlet/servlet.ImageServer?id=0154A000024CghlQAC&oid=00D410000012TJaEAM" style="width:auto;height:75px;"> </td>
                         <td>Product Name Dada</td>
-                        <td>In stock</td>
-                        <td><input class="form-control" type="text" value="1"></td>
+                        <td class="text-center">In stock</td>
+                        <td><input class="form-control text-center" type="text" value="1"></td>
                         <td class="text-right">R$124,90</td>
                         <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
                     </tr>
                     <tr>
-                        <td><img src="https://brf.my.salesforce.com/servlet/servlet.ImageServer?id=0154A000024CgliQAC&oid=00D410000012TJaEAM" style="width:75px;height:75px;"> </td>
+                        <td><img src="https://brf.my.salesforce.com/servlet/servlet.ImageServer?id=0154A000024CgliQAC&oid=00D410000012TJaEAM" style="width:auto;height:75px;"> </td>
                         <td>Product Name Toto</td>
-                        <td>In stock</td>
-                        <td><input class="form-control" type="text" value="1"></td>
+                        <td class="text-center">In stock</td>
+                        <td><input class="form-control text-center" type="text" value="1"></td>
                         <td class="text-right">R$33,90</td>
                         <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
                     </tr>
                     <tr>
-                        <td><img src="https://brf.my.salesforce.com/servlet/servlet.ImageServer?id=0154A000024CgorQAC&oid=00D410000012TJaEAM" style="width:75px;height:75px;"> </td>
+                        <td><img src="https://brf.my.salesforce.com/servlet/servlet.ImageServer?id=0154A000024CgorQAC&oid=00D410000012TJaEAM" style="width:auto;height:75px;"> </td>
                         <td>Product Name Titi</td>
-                        <td>In stock</td>
-                        <td><input class="form-control" type="text" value="1"></td>
+                        <td class="text-center">In stock</td>
+                        <td><input class="form-control text-center" type="text" value="1"></td>
                         <td class="text-right">R$70,00</td>
                         <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
                     </tr>
@@ -51,7 +51,7 @@
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td>Shipping</td>
+                        <td>Envio</td>
                         <td class="text-right">R$6,90</td>
                     </tr>
                     <tr>
