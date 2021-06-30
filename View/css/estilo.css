@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap');
 
 /* Muda a font-family padrão da página */
 body {
@@ -21,7 +21,6 @@ img {
 } 
 
 .menu-esq-botao {
-    box-sizing: border-box;
     color:  rgb(131, 2, 2);
 }
 

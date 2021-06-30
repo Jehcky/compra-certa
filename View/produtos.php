@@ -290,13 +290,14 @@
                     <li><a class="btn btn-button menu-esq-botao">Vinhos, Cervejas e Destilados</a></li><br>
                     <li>
                         <div class="container">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="itensPromocao">
+                            <div class="checkbox">
                                 <label class="form-check-label" for="itensPromocao">
+                                <input class="form-check-input" type="checkbox" value="" id="itensPromocao">
                                 Promoções
                                 </label>
                             </div>
                         </div>
+                        
                     </li>
                 </ul>
             </div>
