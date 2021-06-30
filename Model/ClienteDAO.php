@@ -41,6 +41,19 @@ class ClienteDAO{
             return array();
         }
     }
+
+    public function buscarCliente($idCliente) {
+        try {
+            $minhaConexao = Conexao::getConexao();
+            $comando = " SELECT * FROM cliente WHERE sqCliente = {$idCliente} ";
+            $sql = $minhaConexao->prepare($comando);
+            $resultado = $sql->execute(); 
+        }
+        catch (PDOException $e) {
+            return array();
+        }
+        return $resultado;
+    }
 }
 
 ?>
