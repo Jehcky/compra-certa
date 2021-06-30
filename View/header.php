@@ -37,9 +37,9 @@
                             <a class="nav-link dropdown-toggle" id="produtosDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Produtos
                             </a>
                             <div class="dropdown-menu" aria-labelledby="produtosDropdown">
-                                <a class="dropdown-item nav-link" href="?pagina=produtos">Todas as categorias</a>
+                                <a class="dropdown-item nav-item" href="?pagina=produtos">Todas as categorias</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item nav-link" href="?pagina=produtos">Bebidas</a>
+                                <a class="dropdown-item" href="?pagina=produtos">Bebidas</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="?pagina=produtos">Beleza Higiene e Saude</a>
                                 <div class="dropdown-divider"></div>

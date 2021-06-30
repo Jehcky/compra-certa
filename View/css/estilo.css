@@ -20,6 +20,10 @@ img {
      margin-bottom: 0; 
 } 
 
+.texto-paginacao {
+    color:  rgb(131, 2, 2);
+}
+
 .texto-cor-custom {
     color:  rgb(131, 2, 2);
 }
@@ -40,6 +44,7 @@ img {
     color:  rgb(255, 255, 255);
     background-color: rgb(131, 2, 2);
     width: 230px;
+    height: max-content;
 }
 
 /* Alinha melhor os botões Comprar do painel de produtos */
