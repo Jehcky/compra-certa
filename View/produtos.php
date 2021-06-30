@@ -3,7 +3,7 @@
         <div class="container col-lg-10 col-lg-push-2 col-md-9 col-md-push-3 col-xs-12">
             <div class="container-fluid">
                 <div class="row">
-                    <h2 id="categoria">Todas as cartegorias</h2><br>
+                    <h2 id="categoria">Todas as categorias</h2><br>
                 </div>
                 <div class="row">
                     <div class="col-sm-2">
@@ -259,7 +259,7 @@
                     </div>
                 </div>
                 <div class="text-center">
-                    <ul class="pagination pagination-sm">
+                    <ul class="pagination pagination-md">
                         <li class="page-item"><a class="page-link" href="#">Previous</a></li>
                         <li class="page-item"><a class="page-link" href="#">1</a></li>
                         <li class="page-item"><a class="page-link" href="#">2</a></li>
@@ -276,28 +276,31 @@
             <div class="container">
                 <br>
                 <ul class="list-unstyled">
-                    <h4>DEPARTAMENTO</h4>
-                    <il><a class="btn btn-button">Todas as Categorias</a></il><br>
-                    <il><a class="btn btn-button">Bebidas</a></il><br>
-                    <il><a class="btn btn-button">Beleza Higiene e Saude</a></il><br>
-                    <il><a class="btn btn-button">Carnes e Embutidos</a></il><br>
-                    <il><a class="btn btn-button">Chocolate, Doces e Guloseimas</a></il><br>
-                    <il><a class="btn btn-button">Congelados</a></il><br>
-                    <il><a class="btn btn-button">Frios e Laticínios</a></il><br>
-                    <il><a class="btn btn-button">Hortifruti</a></il><br>
-                    <il><a class="btn btn-button">Limpeza</a></il><br>
-                    <il><a class="btn btn-button">Padaria</a></il><br>
-                    <il><a class="btn btn-button">Vinhos, Cervejas e Destilados</a></il><br>
+                    <h4>DEPARTAMENTOS</h4>
+                    <li><a class="btn btn-button menu-esq-botao">Todas as Categorias</a></li><br>
+                    <li><a class="btn btn-button menu-esq-botao">Bebidas</a></li><br>
+                    <li><a class="btn btn-button menu-esq-botao">Beleza, Higiene e Saúde</a></li><br>
+                    <li><a class="btn btn-button menu-esq-botao">Carnes e Embutidos</a></li><br>
+                    <li><a class="btn btn-button menu-esq-botao">Chocolate, Doces e Guloseimas</a></li><br>
+                    <li><a class="btn btn-button menu-esq-botao">Congelados</a></li><br>
+                    <li><a class="btn btn-button menu-esq-botao">Frios e Laticínios</a></li><br>
+                    <li><a class="btn btn-button menu-esq-botao">Horti-fruti</a></li><br>
+                    <li><a class="btn btn-button menu-esq-botao">Limpeza</a></li><br>
+                    <li><a class="btn btn-button menu-esq-botao">Padaria</a></li><br>
+                    <li><a class="btn btn-button menu-esq-botao">Vinhos, Cervejas e Destilados</a></li><br>
+                    <li>
+                        <div class="container">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="itensPromocao">
+                                <label class="form-check-label" for="itensPromocao">
+                                Promoções
+                                </label>
+                            </div>
+                        </div>
+                    </li>
                 </ul>
             </div>
-            <div class="container">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="itensPromocao">
-                    <label class="form-check-label" for="itensPromocao">
-                        Produtos em promoção
-                    </label>
-                </div>
-            </div>
+            
         </div>
     </div>
 </div>

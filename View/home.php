@@ -58,7 +58,7 @@
     </div>
 
     <div class="container-fluid">
-        <div class="text-center"><h1>PROMOÇÕES DO DIA!</h1><br></div>
+        <div class="text-center"><h1>PROMOÇÕES</h1><br></div>
         <div class="row">
             <div class="col-sm-1 col-sm-offset-1">
             </div>

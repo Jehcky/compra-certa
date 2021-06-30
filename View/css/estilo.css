@@ -1,3 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+/* Muda a font-family padrão da página */
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+img { 
+    width: 100%;    /* Faz com que a imagem preencha todo o carousel */        
+    margin: auto;
+}
+
 .navbar {
     margin-bottom: 50px;
     border-radius: 0;
@@ -8,15 +20,9 @@
      margin-bottom: 0; 
 } 
 
-/* Muda a font-family padrão da página */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-
-img { 
-    width: 100%;            /* Faz com que a imagem preencha todo o carousel */
-    margin: auto;
+.menu-esq-botao {
+    box-sizing: border-box;
+    color:  rgb(131, 2, 2);
 }
 
 /* Alinha melhor os botões Comprar do painel de produtos */
