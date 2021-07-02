@@ -90,7 +90,7 @@ class Cliente extends Login
     /**
      * Get the value of txEmail
      */
-    public function getEmail()
+    public function getTxEmail()
     {
         return $this->txEmail;
     }
@@ -100,28 +100,9 @@ class Cliente extends Login
      *
      * @return  self
      */
-    public function setEmail($txEmail)
+    public function setTxEmail($txEmail)
     {
         $this->txEmail = $txEmail;
-        return $this;
-    }
-
-    /**
-     * Get the value of senha
-     */
-    public function getSenha()
-    {
-        return $this->senha;
-    }
-
-    /**
-     * Set the value of senha
-     *
-     * @return  self
-     */
-    public function setSenha($senha)
-    {
-        $this->senha = $senha;
         return $this;
     }
 }
