@@ -1,21 +1,31 @@
 <?php
-require_once "ClienteDAO.php";
 
-class Cliente
+require_once 'ClienteDAO.php';
+require_once 'Login.php';
+
+class Cliente extends Login
 {
-    private $ID;
-    private $usuario;
-    private $nome;
-    private $CPF;
-    private $email;
-    private $senha;
+    private $idCliente;
+    private $txNomeCliente;
+    private $txCPF;
+    private $txEmail;
 
+    public function __construct() {
+        
+    }
+
+    /**
+     * Insere um novo Cliente no Banco
+     */
     public function incluirCliente()
     {
         $clienteDAO = new ClienteDAO();
         $clienteDAO->incluirCliente($this);
     }
 
+    /**
+     * Funcao para alterar os dados do liente
+     */
     public function alterarCliente($campo, $dado)
     {
         $clienteDAO = new ClienteDAO();
@@ -23,98 +33,76 @@ class Cliente
     }
 
     /**
-     * Get the value of ID
+     * Busca um cliente pelo seu id
      */
-    public function getID()
+    public static function buscarCliente($idCliente) {
+        $cliente = ClienteDAO::buscarCliente($idCliente);
+    }
+    /**
+     * Pegar o valor de idCliente
+     */
+    public function getidCliente()
     {
-        return $this->ID;
+        return $this->idCliente;
     }
 
     /**
-     * Set the value of ID
-     *
-     * @return  self
+     * Setar o valor de idCliente
      */
-    public function setID($ID)
+    public function setidCliente($idCliente)
     {
-        $this->ID = $ID;
+        $this->idCliente = $idCliente;
+    }
+
+    /**
+     * Pegar o valor de txNomeCliente
+     */
+    public function getTxNomeCliente()
+    {
+        return $this->txNomeCliente;
+    }
+
+    /**
+     * Setar o valor de txNomeCliente
+     */
+    public function setTxNomeCliente($txNomeCliente)
+    {
+        $this->txNomeCliente = $txNomeCliente;
+    }
+
+    /**
+     * Pegar o valor de txCPF
+     */
+    public function getTxCPF()
+    {
+        return $this->txCPF;
+    }
+
+    /**
+     * Setar o valor de txCPF
+     */
+    public function setTxCPF($txCPF)
+    {
+        $this->txCPF = $txCPF;
         return $this;
     }
 
     /**
-     * Get the value of usuario
-     */
-    public function getUsuario()
-    {
-        return $this->usuario;
-    }
-
-    /**
-     * Set the value of usuario
-     *
-     * @return  self
-     */
-    public function setUsuario($usuario)
-    {
-        $this->usuario = $usuario;
-        return $this;
-    }
-
-    /**
-     * Get the value of nome
-     */
-    public function getNome()
-    {
-        return $this->nome;
-    }
-
-    /**
-     * Set the value of nome
-     *
-     * @return  self
-     */
-    public function setNome($nome)
-    {
-        $this->nome = $nome;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of CPF
-     */
-    public function getCPF()
-    {
-        return $this->CPF;
-    }
-
-    /**
-     * Set the value of CPF
-     *
-     * @return  self
-     */
-    public function setCPF($CPF)
-    {
-        $this->CPF = $CPF;
-        return $this;
-    }
-
-    /**
-     * Get the value of email
+     * Get the value of txEmail
      */
     public function getEmail()
     {
-        return $this->email;
+        return $this->txEmail;
     }
 
     /**
-     * Set the value of email
+     * Set the value of txEmail
      *
      * @return  self
      */
-    public function setEmail($email)
+    public function setEmail($txEmail)
     {
-        $this->email = $email;
+        $this->txEmail = $txEmail;
         return $this;
     }
 
