@@ -28,9 +28,17 @@
                 . " WHERE idLogin = {$idLogin}";
                 $sql = $conexao->prepare($comando);
                 $sql->execute();
+                $resultado = $sql->fetchAll();
+                var_dump($resultado);
+                die;
+                $login = new Login();
+                $login->setIdLogin($resultado['idLogin']);
             } 
             catch (PDOException $e) {
                 throw $e;
+            }
+            finally {
+                return $login;
             }
         }
     }

@@ -9,6 +9,10 @@ if(isset($_GET['acao'])){
             $controlador = new IncluirClienteController();
             //$controlador->processaRequisicao();
             break;
+        case 'alterar_cliente':
+            require "../compra-certa/Controller/Cliente/AlterarClienteController.php";
+            $controlador = new AlterarClienteController(1);
+            break;
         default:
             break;
     }
@@ -18,8 +22,7 @@ if(isset($_GET['acao'])){
 //$controlador->processaRequisicao();
 
 /*
-require "Controller/Cliente/AlterarClienteController.php";
-$controlador = new AlterarClienteController($idCliente);
+
 $controlador->processaRequisicao();
 
 

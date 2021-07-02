@@ -16,18 +16,23 @@ class ClienteDAO {
         catch(PDOException $e){
             throw $e;
         }
+        finally {
+            return $conexao->lastInsertId();
+        }
     }
 
-    public static function alterarCliente($cliente, $campo, $dado){
-        try{
-            $minhaConexao = Conexao::getConexao();
-            $comando = "update db_compra_certa.cliente set :campo = :dado where clienteID=:id";
-            $sql = $minhaConexao->prepare($comando);
-            $sql->bindParam("campo", $campo);
-            $sql->bindParam("dado", $dado);
-            $sql->bindParam("id", $ID);
-            $ID = $cliente->getID();
-            $sql->execute();
+    public static function alterarCliente(Cliente $cliente){
+        try {
+            $conexao = Conexao::getConexao();
+            $comando = " UPDATE ";
+            // $minhaConexao = Conexao::getConexao();
+            // $comando = "update db_compra_certa.cliente set :campo = :dado where clienteID=:id";
+            // $sql = $minhaConexao->prepare($comando);
+            // $sql->bindParam("campo", $campo);
+            // $sql->bindParam("dado", $dado);
+            // $sql->bindParam("id", $ID);
+            // $ID = $cliente->getID();
+            // $sql->execute();
           }
         catch(PDOException $e){
             throw $e;

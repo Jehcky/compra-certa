@@ -28,10 +28,9 @@ class Cliente extends Login
     /**
      * Funcao para alterar os dados do Cliente
      */
-    public function alterarCliente($campo, $dado)
+    public function alterarCliente()
     {
-        $clienteDAO = new ClienteDAO();
-        $clienteDAO->alterarCliente($this, $campo, $dado);
+        ClienteDAO::alterarCliente($this);
     }
 
     /**
