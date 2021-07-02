@@ -16,6 +16,9 @@
             catch (PDOException $e) {
                 throw $e;
             }
+            finally {
+                return $conexao->lastInsertId();
+            }
         }
 
         public static function buscarLoginPorIdLogin($idLogin) {

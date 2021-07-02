@@ -5,7 +5,7 @@ CREATE TABLE tbLogin (
     PRIMARY KEY (idLogin)
 );
 
-SELECT * FROM tblogin;
+SELECT * FROM tbLogin;
 
 CREATE TABLE tbCliente (
 	idCliente INT NOT NULL AUTO_INCREMENT,

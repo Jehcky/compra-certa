@@ -20,7 +20,8 @@ class Cliente extends Login
      */
     public function incluirCliente()
     {
-        LoginDAO::inserirLogin($this);
+        $idLogin = LoginDAO::inserirLogin($this);
+        $this->setIdLogin($idLogin);
         ClienteDAO::inserirCliente($this);
     }
 

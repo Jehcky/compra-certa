@@ -8,8 +8,8 @@ class ClienteDAO {
     public static function inserirCliente(Cliente $cliente){
         try {
             $conexao = Conexao::getConexao();
-            $comando=" INSERT INTO tbCliente (txNomeCliente, txCPF, txEmail) "
-            . " VALUES ('{$cliente->getTxNomeCliente()}','{$cliente->getTxCPF()}','{$cliente->getTxEmail()}')";
+            $comando=" INSERT INTO tbCliente (txNomeCliente, txCPF, txEmail, idLogin) "
+            . " VALUES ('{$cliente->getTxNomeCliente()}','{$cliente->getTxCPF()}','{$cliente->getTxEmail()}', {$cliente->getIdLogin()})";
             $sql = $conexao->prepare($comando);
             $sql->execute();
         }
