@@ -8,7 +8,8 @@
         {
             try {
                 $conexao = Conexao::getConexao();
-                $comando = "/ INSERT INTO tbLogin (txLogin, txSenha) VALUES ({$login->getTxLogin()}, {$login->getTxSenha()})";
+                $comando = " INSERT INTO tbLogin (txLogin, txSenha) " 
+                    . " VALUES ({$login->getTxLogin()}, {$login->getTxSenha()})";
                 //var_dump($comando);
                 //die;
                 $sql = $conexao->prepare($comando);
