@@ -21,11 +21,11 @@ class Cliente extends Login
     public function incluirCliente()
     {
         LoginDAO::inserirLogin($this);
-        ClienteDAO::incluirCliente($this);
+        ClienteDAO::inserirCliente($this);
     }
 
     /**
-     * Funcao para alterar os dados do liente
+     * Funcao para alterar os dados do Cliente
      */
     public function alterarCliente($campo, $dado)
     {
