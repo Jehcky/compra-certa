@@ -67,6 +67,12 @@
                                 </div>
                             </div>
                             <div class="form-group">
+                                <label class="control-label col-sm-2" for="txLogin">Login:</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="txLogin" name="txLogin" placeholder="Digite seu CPF">
+                                </div>
+                            </div>
+                            <div class="form-group">
                                 <label class="control-label col-sm-2" for="txSenha">Senha:</label>
                                 <div class="col-sm-10">
                                     <input type="password" class="form-control" id="txSenha" name="txSenha"
