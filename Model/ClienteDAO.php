@@ -1,9 +1,10 @@
 <?php
 
-require_once "Conexao.php";
+    require_once "Conexao.php";
+
 class ClienteDAO{
 
-    public function incluirCliente($cliente){
+    public static function incluirCliente(Cliente $cliente){
         try{
             $minhaConexao = Conexao::getConexao();
             $comando = "insert into db_compra_certa.cliente (usuario, nome, cpf, email, senha) values (:usuario, :nome, :cpf, :email, :senha)";
@@ -13,11 +14,6 @@ class ClienteDAO{
             $sql->bindParam("cpf",$CPF);
             $sql->bindParam("email",$email);
             $sql->bindParam("senha",$senha);
-            $usuario = $cliente->getUsuario();
-            $nome = $cliente->getNome();
-            $CPF = $cliente->getCPF();
-            $email = $cliente->getEmail();
-            $senha = $cliente->getSenha();
             
             $sql->execute();
           }
@@ -26,7 +22,7 @@ class ClienteDAO{
         }
     }
 
-    public function alterarCliente($cliente, $campo, $dado){
+    public static function alterarCliente($cliente, $campo, $dado){
         try{
             $minhaConexao = Conexao::getConexao();
             $comando = "update db_compra_certa.cliente set :campo = :dado where clienteID=:id";

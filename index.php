@@ -1,13 +1,27 @@
 <?php
-/*
+
+if(isset($_GET['acao'])){
+    $acao = $_GET['acao'];
+
+    switch($acao) {
+        case 'inserir_cliente':
+            require "../compra-certa/Controller/Cliente/IncluirClienteController.php";
+            $controlador = new IncluirClienteController();
+            //$controlador->processaRequisicao();
+            break;
+        default:
+            break;
+    }
+}
 //-----------------CLIENTES
-require "Controller/Cliente/IncluirClienteController.php";
-$controlador = new IncluirController();
+
+//$controlador->processaRequisicao();
+
+/*
+require "Controller/Cliente/AlterarClienteController.php";
+$controlador = new AlterarClienteController($idCliente);
 $controlador->processaRequisicao();
 
-require "Controller/Cliente/AlterarClienteController.php";
-$controlador = new AlterarClienteController();
-$controlador->processaRequisicao();
 
 //-----------------PEDIDOS
 require "Controller/Produto/ListarProdutoController.php";
@@ -22,15 +36,11 @@ $controlador = new SelecionarpromocaoController();
 $controlador->processaRequisicao();
 */
 
-require "Controller/Cliente/AlterarClienteController.php";
-$controlador = new AlterarClienteController(3, "cpf", "11111111111");
-$controlador->processaRequisicao();
 
-
-$pagina = 'home';
- 
 if(isset($_GET['pagina'])){
     $pagina = $_GET['pagina'];
+} else {
+    $pagina = 'home';
 }
  
 if($pagina == 'controleInterno'){

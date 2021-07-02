@@ -34,7 +34,7 @@
                 return false;
             }
 
-            alert("Cadastro realizado com sucesso!");
+            //alert("Cadastro realizado com sucesso!");
             return true;
         }
     </script>
@@ -45,31 +45,31 @@
                 <div class="panel panel-default">
                     <div class="panel-heading text-center"><h3>CADASTRO</h3></div>
                     <div class="panel-body">
-                        <form id="formcadastro" class="form-horizontal" title="Cadastro" action="../Controller/Cliente/IncluirClienteController.php?acao=inserir" method="POST"
+                        <form id="formcadastro" class="form-horizontal" title="Cadastro" action="index.php?acao=inserir_cliente" method="POST"
                             onsubmit="return validarFormulario(this);">
                             <div class="form-group">
-                                <label class="control-label col-sm-2" for="nome">Nome:</label>
+                                <label class="control-label col-sm-2" for="txNomeCliente">Nome Completo:</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="nome" 
+                                    <input type="text" class="form-control" id="txNomeCliente" name="txNomeCliente"
                                         placeholder="Digite seu Nome Completo">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="control-label col-sm-2" for="cpf">CPF:</label>
+                                <label class="control-label col-sm-2" for="txCPF">CPF:</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="cpf" placeholder="Digite seu CPF">
+                                    <input type="text" class="form-control" id="txCPF" name="txCPF" placeholder="Digite seu CPF">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="control-label col-sm-2" for="email">Email:</label>
+                                <label class="control-label col-sm-2" for="txEmail">Email:</label>
                                 <div class="col-sm-10">
-                                    <input type="email" class="form-control" id="email" placeholder="Digite seu e-mail">
+                                    <input type="email" class="form-control" id="txEmail" name="txEmail" placeholder="Digite seu e-mail">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="control-label col-sm-2" for="senha">Senha:</label>
+                                <label class="control-label col-sm-2" for="txSenha">Senha:</label>
                                 <div class="col-sm-10">
-                                    <input type="password" class="form-control" id="senha"
+                                    <input type="password" class="form-control" id="txSenha" name="txSenha"
                                         placeholder="Digite sua senha">
                                 </div>
                             </div>
@@ -93,7 +93,8 @@
                             </div>
                             <div class="form-group text-center">
                                 <div>
-                                    <a type="submit" class="btn btn-default panel-button-comprar" href="?pagina=perfil">Cadastrar</a>
+                                    <button type="submit" class="btn btn-default panel-button-comprar" >Cadastrar</a>
+                                    <!-- <a type="submit" class="btn btn-default panel-button-comprar" href="?pagina=perfil">Cadastrar</a> -->
                                 </div>
                             </div>
                         </form>

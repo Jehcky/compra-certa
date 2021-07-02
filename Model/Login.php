@@ -10,10 +10,7 @@
         /**
          * Construtor da Classe
          */
-        public function __construct($dados) {
-            $this->idLogin = $dados['idLogin'];
-            $this->txLogin = $dados['txLogin'];
-            $this->txSenha = $dados['txSenha'];
+        public function __construct() {
         }
 
         public function setIdLogin($idLogin) {
@@ -39,7 +36,7 @@
             $this->txSenha = $txSenha;
         }
         
-        public function getTxSenha($txSenha)
+        public function getTxSenha()
         {
             return $this->txSenha;
         }

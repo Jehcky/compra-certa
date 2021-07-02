@@ -1,6 +1,7 @@
 <?php
 
 require_once 'ClienteDAO.php';
+require_once 'LoginDAO.php';
 require_once 'Login.php';
 
 class Cliente extends Login
@@ -11,7 +12,7 @@ class Cliente extends Login
     private $txEmail;
 
     public function __construct() {
-        
+        parent::__construct();
     }
 
     /**
@@ -19,8 +20,8 @@ class Cliente extends Login
      */
     public function incluirCliente()
     {
-        $clienteDAO = new ClienteDAO();
-        $clienteDAO->incluirCliente($this);
+        LoginDAO::inserirLogin($this);
+        ClienteDAO::incluirCliente($this);
     }
 
     /**
