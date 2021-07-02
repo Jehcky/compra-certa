@@ -1,24 +1,20 @@
 <?php
 
     require_once "Conexao.php";
+    require_once "Cliente.php";
 
-class ClienteDAO{
+class ClienteDAO {
 
     public static function incluirCliente(Cliente $cliente){
-        try{
-            $minhaConexao = Conexao::getConexao();
-            $comando = "insert into db_compra_certa.cliente (usuario, nome, cpf, email, senha) values (:usuario, :nome, :cpf, :email, :senha)";
-            $sql = $minhaConexao->prepare($comando);
-            $sql->bindParam("usuario",$usuario);
-            $sql->bindParam("nome",$nome);
-            $sql->bindParam("cpf",$CPF);
-            $sql->bindParam("email",$email);
-            $sql->bindParam("senha",$senha);
-            
+        try {
+            $conexao = Conexao::getConexao();
+            $comando = " INSERT INTO tbCliente (txNomeCliente, txCPF, txEmail) "
+            . " VALUES ('{$cliente->getTxNomeCliente()}','{$cliente->getTxCPF()}')";
+            $sql = $conexao->prepare($comando);
             $sql->execute();
-          }
+        }
         catch(PDOException $e){
-            return array();
+            throw $e;
         }
     }
 
@@ -34,7 +30,7 @@ class ClienteDAO{
             $sql->execute();
           }
         catch(PDOException $e){
-            return array();
+            throw $e;
         }
     }
 
@@ -44,16 +40,7 @@ class ClienteDAO{
      * @return object<Cliente>
      */
     public static function buscarCliente($idCliente) {
-        // try {
-        //     $minhaConexao = Conexao::getConexao();
-        //     $comando = " SELECT * FROM tbCliente WHERE sqCliente = {$idCliente} ";
-        //     $sql = $minhaConexao->prepare($comando);
-        //     $resultado = $sql->execute();
-        // }
-        // catch (PDOException $e) {
-        //     return array();
-        // }
-        // return $resultado;
+        return $resultado = "";
     }
 }
 

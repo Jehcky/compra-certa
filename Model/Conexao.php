@@ -1,5 +1,7 @@
 <?php
+
 class Conexao{
+
     public static function getConexao(){
         $servername = "localhost:3306"; 
         $username = "root";
@@ -17,5 +19,6 @@ class Conexao{
          return null;
        }
     }
+    
 }
 ?>

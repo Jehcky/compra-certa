@@ -9,27 +9,25 @@
             try {
                 $conexao = Conexao::getConexao();
                 $comando = " INSERT INTO tbLogin (txLogin, txSenha) " 
-                    . " VALUES ({$login->getTxLogin()}, {$login->getTxSenha()})";
-                //var_dump($comando);
-                //die;
+                    . " VALUES ('{$login->getTxLogin()}', '{$login->getTxSenha()}')";
                 $sql = $conexao->prepare($comando);
                 $sql->execute();
             }
-            catch (PDOException $ex) {
-                throw $ex;
+            catch (PDOException $e) {
+                throw $e;
             }
         }
 
         public static function buscarLoginPorIdLogin($idLogin) {
             try {
                 $conexao = Conexao::getConexao();
-                $comando = " SELECT txLogin, txSenha FROM tbLogin "
-                + " WHERE idLogin = {$idLogin}";
+                $comando = " SELECT (txLogin, txSenha) FROM tbLogin "
+                . " WHERE idLogin = {$idLogin}";
                 $sql = $conexao->prepare($comando);
                 $sql->execute();
-            }
-            catch (PDOException $ex) {
-                return array();
+            } 
+            catch (PDOException $e) {
+                throw $e;
             }
         }
     }

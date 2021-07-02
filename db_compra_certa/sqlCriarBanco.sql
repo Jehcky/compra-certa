@@ -1,0 +1,6 @@
+CREATE TABLE tbLogin (
+	sqLogin INT NOT NULL AUTO_INCREMENT,
+    txLogin VARCHAR(15) NOT NULL,
+    txSenha VARCHAR(15) NOT NULL,
+    PRIMARY KEY (sqLogin)
+);
