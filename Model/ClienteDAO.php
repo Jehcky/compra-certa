@@ -13,7 +13,7 @@ class ClienteDAO {
             $sql = $conexao->prepare($comando);
             $sql->execute();
         }
-        catch(PDOException $e){
+        catch(PDOException $e) {
             throw $e;
         }
         finally {
@@ -33,8 +33,8 @@ class ClienteDAO {
             // $sql->bindParam("id", $ID);
             // $ID = $cliente->getID();
             // $sql->execute();
-          }
-        catch(PDOException $e){
+        }
+        catch(PDOException $e) {
             throw $e;
         }
     }

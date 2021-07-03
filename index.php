@@ -7,7 +7,6 @@ if(isset($_GET['acao'])){
         case 'inserir_cliente':
             require "../compra-certa/Controller/Cliente/IncluirClienteController.php";
             $controlador = new IncluirClienteController();
-            //$controlador->processaRequisicao();
             break;
         case 'alterar_cliente':
             require "../compra-certa/Controller/Cliente/AlterarClienteController.php";

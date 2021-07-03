@@ -1,8 +1,10 @@
 <?php
 
-class Conexao{
+class Conexao {
 
-    public static function getConexao(){
+    private static $minhaConexao;
+
+    public static function getConexao() {
         $servername = "localhost:3306"; 
         $username = "root";
         $password = "";

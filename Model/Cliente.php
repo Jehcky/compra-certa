@@ -11,6 +11,9 @@ class Cliente extends Login
     private $txCPF;
     private $txEmail;
 
+    /**
+     * Construtor da Classe
+     */
     public function __construct() {
         parent::__construct();
     }
@@ -30,6 +33,7 @@ class Cliente extends Login
      */
     public function alterarCliente()
     {
+        LoginDAO::alterarLogin($this);
         ClienteDAO::alterarCliente($this);
     }
 
@@ -42,7 +46,7 @@ class Cliente extends Login
     /**
      * Pegar o valor de idCliente
      */
-    public function getidCliente()
+    public function getIdCliente()
     {
         return $this->idCliente;
     }
@@ -50,7 +54,7 @@ class Cliente extends Login
     /**
      * Setar o valor de idCliente
      */
-    public function setidCliente($idCliente)
+    public function setIdCliente($idCliente)
     {
         $this->idCliente = $idCliente;
     }

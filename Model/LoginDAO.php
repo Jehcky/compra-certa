@@ -12,12 +12,26 @@
                     . " VALUES ('{$login->getTxLogin()}', '{$login->getTxSenha()}')";
                 $sql = $conexao->prepare($comando);
                 $sql->execute();
+                $idLogin = $conexao->lastInsertId();
             }
             catch (PDOException $e) {
                 throw $e;
             }
             finally {
-                return $conexao->lastInsertId();
+                return $idLogin;
+            }
+        }
+
+        public static function alterarLogin(Login $login) 
+        {
+            try {
+
+            }
+            catch (PDOException $e) {
+                throw $e;
+            }
+            finally {
+
             }
         }
 
@@ -29,10 +43,11 @@
                 $sql = $conexao->prepare($comando);
                 $sql->execute();
                 $resultado = $sql->fetchAll();
+                echo '<pre>';
                 var_dump($resultado);
                 die;
                 $login = new Login();
-                $login->setIdLogin($resultado['idLogin']);
+                //$login->setIdLogin($resultado['idLogin']);
             } 
             catch (PDOException $e) {
                 throw $e;
