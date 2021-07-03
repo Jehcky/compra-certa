@@ -11,15 +11,28 @@ class Conexao {
         $dbname = "db_compra_certa";
 
         try {
-           $minhaConexao = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-           // set the PDO error mode to exception
-           $minhaConexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-           return $minhaConexao;
+            $minhaConexao = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+            // set the PDO error mode to exception
+            $minhaConexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         }
         catch(PDOException $e) {
-         echo "entrou no catch".$e->getmessage();
-         return null;
-       }
+            throw $e;
+        }
+        finally {
+            return $minhaConexao;
+        }
+    }
+
+    public static function closeConexao() {
+        try {
+            $minhaConexao = null;
+        }
+        catch (PDOException $e) {
+            throw $e;
+        }
+        finally {
+            
+        }
     }
     
 }

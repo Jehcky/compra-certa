@@ -10,6 +10,7 @@ class Cliente extends Login
     private $txNomeCliente;
     private $txCPF;
     private $txEmail;
+    private $flReceberEmail;
 
     /**
      * Construtor da Classe
@@ -19,7 +20,7 @@ class Cliente extends Login
     }
 
     /**
-     * Insere um novo Cliente no Banco
+     * Insere um novo Cliente
      */
     public function incluirCliente()
     {
@@ -29,7 +30,7 @@ class Cliente extends Login
     }
 
     /**
-     * Funcao para alterar os dados do Cliente
+     * Altera o Cliente
      */
     public function alterarCliente()
     {
@@ -38,13 +39,17 @@ class Cliente extends Login
     }
 
     /**
-     * Busca um cliente pelo seu id
+     * Busca um cliente pelo seu idCliente
+     * @param $idCliente
+     * @return Cliente
      */
-    public static function buscarCliente($idCliente) {
-        $cliente = ClienteDAO::buscarCliente($idCliente);
+    public static function buscarClientePorId($idCliente) : Cliente {
+        $cliente = null;
+        $cliente = ClienteDAO::buscarClientePorId($idCliente);
+        return $cliente;
     }
     /**
-     * Pegar o valor de idCliente
+     * Pega o valor de idCliente
      */
     public function getIdCliente()
     {
@@ -52,7 +57,7 @@ class Cliente extends Login
     }
 
     /**
-     * Setar o valor de idCliente
+     * Seta o valor de idCliente
      */
     public function setIdCliente($idCliente)
     {
@@ -60,7 +65,7 @@ class Cliente extends Login
     }
 
     /**
-     * Pegar o valor de txNomeCliente
+     * Pega o valor de txNomeCliente
      */
     public function getTxNomeCliente()
     {
@@ -68,7 +73,7 @@ class Cliente extends Login
     }
 
     /**
-     * Setar o valor de txNomeCliente
+     * Seta o valor de txNomeCliente
      */
     public function setTxNomeCliente($txNomeCliente)
     {
@@ -76,7 +81,7 @@ class Cliente extends Login
     }
 
     /**
-     * Pegar o valor de txCPF
+     * Pega o valor de txCPF
      */
     public function getTxCPF()
     {
@@ -84,16 +89,15 @@ class Cliente extends Login
     }
 
     /**
-     * Setar o valor de txCPF
+     * Seta o valor de txCPF
      */
     public function setTxCPF($txCPF)
     {
         $this->txCPF = $txCPF;
-        return $this;
     }
 
     /**
-     * Get the value of txEmail
+     * Pega o valor de txEmail
      */
     public function getTxEmail()
     {
@@ -101,13 +105,26 @@ class Cliente extends Login
     }
 
     /**
-     * Set the value of txEmail
-     *
-     * @return  self
+     * Seta o valor de txEmail
      */
     public function setTxEmail($txEmail)
     {
         $this->txEmail = $txEmail;
-        return $this;
+    }
+
+    /**
+     * Seta o valor de flReceberEmail
+     */
+    public function setFlReceberEmail($flReceberEmail) 
+    {
+        $this->$flReceberEmail = $flReceberEmail;
+    }
+
+    /**
+     * Pega o valor de flReceberEmail
+     */
+    public function getFlReceberEmail()
+    {
+        return $this->flReceberEmail;
     }
 }

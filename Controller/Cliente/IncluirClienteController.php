@@ -12,9 +12,7 @@ class IncluirClienteController implements Icontroller{
     }
 
     public function processaRequisicao(){
-        //echo '<pre>';
-        //var_dump($_POST);
-        //die;
+        
         $this->cliente->setTxLogin($_POST['txLogin']);
         $this->cliente->setTxSenha($_POST['txSenha']);
         $this->cliente->setTxNomeCliente($_POST['txNomeCliente']);

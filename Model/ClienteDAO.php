@@ -5,11 +5,50 @@
 
 class ClienteDAO {
 
-    public static function inserirCliente(Cliente $cliente){
+    /**
+     * Insere um Cliente
+     * @param Cliente
+     */
+    public static function inserirCliente(Cliente $cliente) {
         try {
             $conexao = Conexao::getConexao();
-            $comando=" INSERT INTO tbCliente (txNomeCliente, txCPF, txEmail, idLogin) "
-            . " VALUES ('{$cliente->getTxNomeCliente()}','{$cliente->getTxCPF()}','{$cliente->getTxEmail()}', {$cliente->getIdLogin()})";
+            $comando = " INSERT INTO tbCliente "
+            . " (txNomeCliente, txCPF, txEmail, flReceberEmail, idLogin) "
+            . " VALUES ("
+            . "'{$cliente->getTxNomeCliente()}', "
+            . "'{$cliente->getTxCPF()}', "
+            . "'{$cliente->getTxEmail()}', "
+            . " {$cliente->getFlReceberEmail()}, "
+            . " {$cliente->getIdLogin()} "
+            . ")";
+            $sql = $conexao->prepare($comando);
+            $sql->execute();
+            $idCliente = $conexao->lastInsertId();
+        }
+        catch(PDOException $e) {
+            throw $e;
+        }
+        finally {
+            $conexao = null;
+            return $idCliente;
+        }
+    }
+
+    /**
+     * Altera um Cliente
+     * @param Cliente
+     */
+    public static function alterarCliente(Cliente $cliente){
+        try {
+            $conexao = Conexao::getConexao();
+            $comando = " UPDATE tbCliente "
+                . " SET "
+                . " txNomeCliente = " . $cliente->getTxNomeCliente() . ", "
+                . " txCPF = '" . $cliente->getTxCPF() . "', "
+                . " txEmail = '" . $cliente->getTxEmail() . "', "
+                . " flReceberEmail = " . $cliente->getFlReceberEmail()
+                . " WHERE "
+                . " idCliente = " . $cliente->getIdCliente();
             $sql = $conexao->prepare($comando);
             $sql->execute();
         }
@@ -17,35 +56,36 @@ class ClienteDAO {
             throw $e;
         }
         finally {
-            return $conexao->lastInsertId();
-        }
-    }
-
-    public static function alterarCliente(Cliente $cliente){
-        try {
-            $conexao = Conexao::getConexao();
-            $comando = " UPDATE ";
-            // $minhaConexao = Conexao::getConexao();
-            // $comando = "update db_compra_certa.cliente set :campo = :dado where clienteID=:id";
-            // $sql = $minhaConexao->prepare($comando);
-            // $sql->bindParam("campo", $campo);
-            // $sql->bindParam("dado", $dado);
-            // $sql->bindParam("id", $ID);
-            // $ID = $cliente->getID();
-            // $sql->execute();
-        }
-        catch(PDOException $e) {
-            throw $e;
+            $sql = null;
+            $conexao = null;
         }
     }
 
     /**
-     * Busca um cliente pelo seu $idCliente
+     * Busca um cliente pelo seu idCliente
      * @param $idCliente
-     * @return $resultado
+     * @return Cliente
      */
-    public static function buscarCliente($idCliente) {
-        return $resultado = "";
+    public static function buscarClientePorId($idCliente) : Cliente {
+        $cliente = null;
+        try {
+            $cliente = new Cliente();
+            $conexao = Conexao::getConexao();
+            $comando = " SELECT "
+                . " (txNomeCliente, txCPF, txEmail, flReceberEmail) "
+                . " FROM tbCliente "
+                . " WHERE idCliente = {$idCliente}";
+            $sql = $conexao->prepare($comando);
+            $sql->execute();
+        }
+        catch (PDOException $e) {
+            throw $e;
+        }
+        finally {
+            $sql = null;
+            $conexao = null;
+            return $cliente;
+        }
     }
 }
 

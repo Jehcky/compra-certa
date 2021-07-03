@@ -12,6 +12,7 @@ CREATE TABLE tbCliente (
     txNomeCliente VARCHAR(150) NOT NULL,
     txCPF VARCHAR(11) NOT NULL,
     txEmail VARCHAR(50) NOT NULL,
+    flReceberEmail BOOLEAN NOT NULL,
     idLogin INT NOT NULL,
     PRIMARY KEY(idCliente),
     FOREIGN KEY(idLogin) REFERENCES tbLogin(idLogin)
