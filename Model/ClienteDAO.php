@@ -10,6 +10,8 @@ class ClienteDAO {
      * @param Cliente
      */
     public static function inserirCliente(Cliente $cliente) {
+        $conexao = null;
+        $idCliente = null;
         try {
             $conexao = Conexao::getConexao();
             $comando = " INSERT INTO tbCliente "
@@ -18,7 +20,8 @@ class ClienteDAO {
             . "'{$cliente->getTxNomeCliente()}', "
             . "'{$cliente->getTxCPF()}', "
             . "'{$cliente->getTxEmail()}', "
-            . " {$cliente->getFlReceberEmail()}, "
+            . " 1, "
+            //. " {$cliente->getFlReceberEmail()}, "
             . " {$cliente->getIdLogin()} "
             . ")";
             $sql = $conexao->prepare($comando);
@@ -72,11 +75,21 @@ class ClienteDAO {
             $cliente = new Cliente();
             $conexao = Conexao::getConexao();
             $comando = " SELECT "
-                . " (txNomeCliente, txCPF, txEmail, flReceberEmail) "
+                . " idCliente, txNomeCliente, txCPF, txEmail, flReceberEmail "
                 . " FROM tbCliente "
                 . " WHERE idCliente = {$idCliente}";
             $sql = $conexao->prepare($comando);
             $sql->execute();
+            $resultado = $sql->fetchObject();
+            
+            $cliente->setIdCliente($resultado->idCliente);
+            $cliente->setTxNomeCliente($resultado->txNomeCliente);
+            $cliente->setTxCPF($resultado->txCPF);
+            $cliente->setTxEmail($resultado->txEmail);
+            $cliente->setFlReceberEmail($resultado->flReceberEmail);
+            //echo '<pre>';
+            //var_dump($cliente);
+            //die;
         }
         catch (PDOException $e) {
             throw $e;

@@ -1,3 +1,11 @@
+<?php 
+    include_once '../compra-certa/Model/Cliente.php';
+    include_once '../compra-certa/Controller/Cliente/BuscarClienteController.php';
+
+    $controller = new BuscarClienteController();
+    $cliente = $controller->processaRequisicao();
+?>
+
 <!-- Centered Pills -->
 <div class="container-fluid">
     <ul class="nav nav-pills nav-justified">
@@ -10,31 +18,31 @@
         <div id="meusDados" class="tab-pane fade in active container">
             <br>
             <div class="panel-body">
-            <form id="formcadastro" class="form-horizontal" title="Cadastro" action="#" method="POST" onsubmit="return validarFormulario(this);">
+            <form id="formcadastro" class="form-horizontal" title="Cadastro" action="index.php?acao=alterar_cliente" method="POST" onsubmit="return validarFormulario(this);">
                 <div class="form-group">
-                    <label class="control-label col-sm-2" for="nome">Nome:</label>
+                    <label class="control-label col-sm-2" for="txNomeCliente">Nome:</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="nome" 
-                            value="NOME COMPLETO" disabled=true;>
+                        <input type="text" class="form-control" id="txNomeCliente" name="txNomeCliente"
+                            value="<?php echo $cliente->getTxNomeCliente(); ?>" disabled=true;>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="control-label col-sm-2" for="cpf">CPF:</label>
+                    <label class="control-label col-sm-2" for="txCPF">CPF:</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="cpf" value="000000000-00" disabled=true;>
+                        <input type="text" class="form-control" id="txCPF" name="txCPF" value="<?php echo $cliente->getTxCPF(); ?>" disabled=true;>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="control-label col-sm-2" for="email">Email:</label>
+                    <label class="control-label col-sm-2" for="txEmail">Email:</label>
                     <div class="col-sm-10">
-                        <input type="email" class="form-control" id="email" value="EMAIL@EMAIL.EMAIL" disabled=true;>
+                        <input type="email" class="form-control" id="txEmail" name="txEmail" value="<?php echo $cliente->getTxEmail(); ?>" disabled=true;>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="control-label col-sm-2" for="senha">Senha:</label>
+                    <label class="control-label col-sm-2" for="txSenha">Senha:</label>
                     <div class="col-sm-10">
-                        <input type="password" class="form-control" id="senha"
-                        value="PASSWORD" disabled=true;>
+                        <input type="password" class="form-control" id="txSenha" name="txSenha"
+                        value="PASSWORD" disabled=true>
                     </div>
                 </div>
             </div>

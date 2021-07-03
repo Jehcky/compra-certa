@@ -4,13 +4,14 @@ if(isset($_GET['acao'])){
     $acao = $_GET['acao'];
 
     switch($acao) {
+        // -------- CLIENTE
         case 'inserir_cliente':
             require "../compra-certa/Controller/Cliente/IncluirClienteController.php";
             $controlador = new IncluirClienteController();
             break;
         case 'alterar_cliente':
             require "../compra-certa/Controller/Cliente/AlterarClienteController.php";
-            $controlador = new AlterarClienteController(1);
+            $controlador = new AlterarClienteController();
             break;
         default:
             break;

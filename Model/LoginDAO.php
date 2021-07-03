@@ -59,8 +59,16 @@
             }
         }
 
+        /**
+         * Busca um Login por seu idLogin
+         * @param $idLogin
+         * @throws PDOException
+         * @return Login
+         */
         public static function buscarLoginPorIdLogin($idLogin) {
+            $login = null;
             try {
+                $login = new Login();
                 $conexao = Conexao::getConexao();
                 $comando = " SELECT "
                     . " (txLogin, txSenha) "
@@ -72,13 +80,14 @@
                 echo '<pre>';
                 var_dump($resultado);
                 die;
-                $login = new Login();
+                
                 
             } 
             catch (PDOException $e) {
                 throw $e;
             }
             finally {
+                $conexao = null;
                 return $login;
             }
         }
