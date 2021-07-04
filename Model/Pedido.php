@@ -6,7 +6,7 @@
         private $txCliente;
         private $txEndereco;
         private $vlValor;
-        private $txAvaliacao;
+        private $nuAvaliacao;
         private $txObs;
         private $lstProdutos = array();
         private $lstHistorico = array();
@@ -49,26 +49,6 @@
         public function setIdPedido($idPedido)
         {
                 $this->idPedido = $idPedido;
-
-                return $this;
-        }
-
-        /**
-         * Get the value of txAvaliacao
-         */ 
-        public function getTxAvaliacao()
-        {
-                return $this->txAvaliacao;
-        }
-
-        /**
-         * Set the value of txAvaliacao
-         *
-         * @return  self
-         */ 
-        public function setTxAvaliacao($txAvaliacao)
-        {
-                $this->txAvaliacao = $txAvaliacao;
 
                 return $this;
         }
@@ -189,6 +169,26 @@
         public function setTxEndereco($txEndereco)
         {
                 $this->txEndereco = $txEndereco;
+
+                return $this;
+        }
+
+        /**
+         * Get the value of nuAvaliacao
+         */ 
+        public function getNuAvaliacao()
+        {
+                return $this->nuAvaliacao;
+        }
+
+        /**
+         * Set the value of nuAvaliacao
+         *
+         * @return  self
+         */ 
+        public function setNuAvaliacao($nuAvaliacao)
+        {
+                $this->nuAvaliacao = $nuAvaliacao;
 
                 return $this;
         }
