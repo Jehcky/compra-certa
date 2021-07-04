@@ -18,8 +18,14 @@ class IncluirClienteController implements Icontroller{
         $this->cliente->setTxNomeCliente($_POST['txNomeCliente']);
         $this->cliente->setTxCPF($_POST['txCPF']);
         $this->cliente->setTxEmail($_POST['txEmail']);
-        $this->cliente->incluirCliente($this);
-        require 'View/teste.php';
+        if (isset($_POST['flReceberEmail'])) {
+            $_POST['flReceberEmail'] == "on" ? 
+            $this->cliente->setFlReceberEmail("1") : $this->cliente->setFlReceberEmail("0");
+        } else {
+            $this->cliente->setFlReceberEmail("0");
+        }
+        $this->cliente->inserirCliente($this);
+        require 'View/perfil.php';
         
     }
 }

@@ -4,6 +4,7 @@
 
     $controller = new BuscarClienteController();
     $cliente = $controller->processaRequisicao();
+    
 ?>
 
 <!-- Centered Pills -->

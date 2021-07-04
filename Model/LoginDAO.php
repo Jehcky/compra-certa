@@ -61,32 +61,32 @@
 
         /**
          * Busca um Login por seu idLogin
-         * @param $idLogin
+         * @param idLogin
          * @throws PDOException
          * @return Login
          */
-        public static function buscarLoginPorIdLogin($idLogin) {
+        public static function buscarLoginPorId($idLogin) {
             $login = null;
             try {
                 $login = new Login();
                 $conexao = Conexao::getConexao();
                 $comando = " SELECT "
-                    . " (txLogin, txSenha) "
+                    . " (idLogin, txLogin, txSenha) "
                     . " FROM tbLogin "
                     . " WHERE idLogin = {$idLogin}";
                 $sql = $conexao->prepare($comando);
                 $sql->execute();
-                $resultado = $sql->fetchAll();
-                echo '<pre>';
-                var_dump($resultado);
-                die;
-                
-                
+                $resultado = $sql->fetchObject();
+
+                $login->setIdLogin($resultado->idLogin);
+                $login->setTxLogin($resultado->txLogin);
+                $login->setTxSenha($resultado->txSenha);
             } 
             catch (PDOException $e) {
                 throw $e;
             }
             finally {
+                $sql = null;
                 $conexao = null;
                 return $login;
             }

@@ -3,26 +3,32 @@
 
     <script>
         function validarFormulario(form) {
-            if (form["nome"].value == "") {
-                form["nome"].focus();
+            console.log('entrou');
+            if (form["txNomeCliente"].value == "") {
+                form["txNomeCliente"].focus();
                 alert("Preencha seu nome completo.");
                 return false;
             }
-            if (form["cpf"].value == "") {
-                form["cpf"].focus();
+            if (form["txCPF"].value == "") {
+                form["txCPF"].focus();
                 alert("Preencha seu CPF.");
                 return false;
             }
-            if (form["email"].value == "") {
-                form["email"].focus();
+            if (form["txEmail"].value == "") {
+                form["txEmail"].focus();
                 alert("Preencha seu E-mail.");
                 return false;
             }
-            if (form["senha"].value == "") {
+            if (form["txLogin"].value == "") {
+                form["txLogin"].focus();
+                alert("Preencha seu nome de Login.");
+                return false;
+            }
+            if (form["txSenha"].value == "") {
                 if (form["confirmasenha"].value != "") {
                     form["confirmasenha"].value = "";
                 }
-                form["senha"].focus();
+                form["txSenha"].focus();
                 alert("Senha não preenchida. Preencha novamente a sua senha e a confirmação.");
                 return false;
             }
@@ -69,7 +75,7 @@
                             <div class="form-group">
                                 <label class="control-label col-sm-2" for="txLogin">Login:</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="txLogin" name="txLogin" placeholder="Digite seu CPF">
+                                    <input type="text" class="form-control" id="txLogin" name="txLogin" placeholder="Digite seu nome de Login">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -89,8 +95,8 @@
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-sm-12">
                                     <div class="checkbox">
-                                        <label class="form-check-label" for="checkboxpromo">
-                                            <input class="form-check-input" type="checkbox" id="checkboxpromo">Desejo receber promoções e novidades da
+                                        <label class="form-check-label" for="flReceberEmail">
+                                            <input class="form-check-input" type="checkbox" id="flReceberEmail" name="flReceberEmail">Desejo receber promoções e novidades da
                                             Loja
                                             via
                                             e-mail</label>

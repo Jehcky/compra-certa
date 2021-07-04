@@ -5,8 +5,6 @@ CREATE TABLE tbLogin (
     PRIMARY KEY (idLogin)
 );
 
-SELECT * FROM tbLogin;
-
 CREATE TABLE tbCliente (
 	idCliente INT NOT NULL AUTO_INCREMENT,
     txNomeCliente VARCHAR(150) NOT NULL,
@@ -14,8 +12,17 @@ CREATE TABLE tbCliente (
     txEmail VARCHAR(50) NOT NULL,
     flReceberEmail BOOLEAN NOT NULL,
     idLogin INT NOT NULL,
-    PRIMARY KEY(idCliente),
-    FOREIGN KEY(idLogin) REFERENCES tbLogin(idLogin)
+    PRIMARY KEY (idCliente),
+    FOREIGN KEY (idLogin) REFERENCES tbLogin (idLogin)
 );
 
-SELECT * FROM tbCliente;
+CREATE TABLE tbFuncionario (
+	idFuncionario INT NOT NULL AUTO_INCREMENT,
+    txNomeFuncionario VARCHAR(150) NOT NULL,
+    flGerente BOOLEAN NOT NULL,
+    idLogin INT NOT NULL,
+    PRIMARY KEY (idFuncionario),
+    FOREIGN KEY (idLogin) REFERENCES tbLogin (idLogin)
+);
+
+
