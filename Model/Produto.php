@@ -23,9 +23,9 @@
         }
 
         public function selecionarpromocao(){
-                $produtoDAO = new ProdutoDAO();
-                return $produtoDAO->selecionarPromocao();
-            }
+            $produtoDAO = new ProdutoDAO();
+            return $produtoDAO->selecionarPromocao();
+        }
 
         /** GETS AND SETS
          * Get the value of ID

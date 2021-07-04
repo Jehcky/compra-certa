@@ -9,6 +9,7 @@ class SelecionarCategoriaController implements Icontroller{
     public function __construct($categoria){
         $this->produto = new Produto();
         $this->produto->setCategoria($categoria);
+        $this->processaRequisicao();
     }
 
     public function processaRequisicao(){
