@@ -13,6 +13,26 @@
             parent::__construct();
         }
 
+        public function rastreiaPedido(){
+            $funcionarioDAO = new FuncionarioDAO();
+            return $this->$funcionarioDAO->rastreiaPedidos();
+        }
+
+        public function exibeSetores(){
+            $funcionarioDAO = new FuncionarioDAO();
+            return $this->$funcionarioDAO->exibeSetores();
+        }
+
+        public function avancaSetor(){
+            $funcionarioDAO = new FuncionarioDAO();
+            return $this->$funcionarioDAO->avancaSetor();
+        }
+
+        public function retornatSetor(){
+            $funcionarioDAO = new FuncionarioDAO();
+            return $this->$funcionarioDAO->retornatSetor();
+        }
+
         public function incluirFuncionario()
         {
             FuncionarioDAO::inserirFuncionario($this);

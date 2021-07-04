@@ -5,6 +5,34 @@
 
     class FuncionarioDAO {
         
+
+        public function rastreiaPedido($idPedido){
+            /*
+            SELECT E.idPedido AS pedido, A.txNomeCliente AS cliente, B.txRua AS endereco, E.vlTotal, E.nuAvaliacao, E.txObs 
+            FROM tbcliente A, tbendereco B, tbpedido E 
+            WHERE A.idCliente = B.idCliente
+            AND E.idCliente = A.idCliente
+            AND E.idEndereco = B.idEndereco
+            AND E.idPedido = $idPedido
+            */
+        }
+
+        public function exibeSetores(){
+            /*
+            */
+        }
+
+        public function avancaSetor(){
+            /*
+            */
+        }
+
+        public function retornatSetor(){
+            /*
+            */
+        }
+
+        public function 
         /**
          * Insere um Funcionario
          *

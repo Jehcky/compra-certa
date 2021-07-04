@@ -1,0 +1,14 @@
+ FRONT
+ -login funcionario/gerente
+ 
+ FUNCIONARIO
+ -rastear pedido
+ -exibir setores
+ -avançar setor
+ -retornar setor
+
+ GERENTE
+ -relatorios:
+ --tempo medio em cada setor
+ --bairros mais atendidos
+ --clientes que compram mais

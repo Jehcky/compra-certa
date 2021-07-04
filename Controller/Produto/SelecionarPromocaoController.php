@@ -8,6 +8,7 @@ class SelecionarPromocaoController implements Icontroller{
 
     public function __construct(){
         $this->produto = new Produto();
+        $this->processaRequisicao();
     }
 
     public function processaRequisicao(){
