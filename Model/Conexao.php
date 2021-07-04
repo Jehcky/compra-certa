@@ -22,18 +22,5 @@ class Conexao {
             return $minhaConexao;
         }
     }
-
-    public static function closeConexao() {
-        try {
-            $minhaConexao = null;
-        }
-        catch (PDOException $e) {
-            throw $e;
-        }
-        finally {
-            
-        }
-    }
-    
 }
 ?>
