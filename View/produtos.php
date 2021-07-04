@@ -277,28 +277,25 @@
                 <br>
                 <ul class="list-unstyled">
                     <h4>DEPARTAMENTOS</h4>
-                    <a class="btn btn-button texto-cor-custom menu-esq-botao"><li class="">Todas as Categorias</li></a><br>
-                    <a class="btn btn-button texto-cor-custom menu-esq-botao"><li class="">Bebidas</li></a><br>
-                    <a class="btn btn-button texto-cor-custom menu-esq-botao"><li class="">Beleza, Higiene e Saúde</li></a><br>
-                    <a class="btn btn-button texto-cor-custom menu-esq-botao"><li class="">Carnes e Embutidos</li></a><br>
-                    <a class="btn btn-button texto-cor-custom menu-esq-botao"><li class="">Chocolate, Doces e Guloseimas</li></a><br>
-                    <a class="btn btn-button texto-cor-custom menu-esq-botao"><li class="">Congelados</li></a><br>
-                    <a class="btn btn-button texto-cor-custom menu-esq-botao"><li class="">Frios e Laticínios</li></a><br>
-                    <a class="btn btn-button texto-cor-custom menu-esq-botao"><li class="">Horti-fruti</li></a><br>
-                    <a class="btn btn-button texto-cor-custom menu-esq-botao"><li class="">Limpeza</li></a><br>
-                    <a class="btn btn-button texto-cor-custom menu-esq-botao"><li class="">Padaria</li></a><br>
-                    <a class="btn btn-button texto-cor-custom menu-esq-botao"><li class="">Vinhos, Cervejas e Destilados</li></a><br>
+                    <a class="btn btn-button texto-cor-custom menu-esq-botao"><li>Todas as Categorias</li></a><br>
+                    <a class="btn btn-button texto-cor-custom menu-esq-botao"><li>Bebidas</li></a><br>
+                    <a class="btn btn-button texto-cor-custom menu-esq-botao"><li>Beleza, Higiene e Saúde</li></a><br>
+                    <a class="btn btn-button texto-cor-custom menu-esq-botao"><li>Carnes e Embutidos</li></a><br>
+                    <a class="btn btn-button texto-cor-custom menu-esq-botao"><li>Chocolate, Doces e Guloseimas</li></a><br>
+                    <a class="btn btn-button texto-cor-custom menu-esq-botao"><li>Congelados</li></a><br>
+                    <a class="btn btn-button texto-cor-custom menu-esq-botao"><li>Frios e Laticínios</li></a><br>
+                    <a class="btn btn-button texto-cor-custom menu-esq-botao"><li>Horti-fruti</li></a><br>
+                    <a class="btn btn-button texto-cor-custom menu-esq-botao"><li>Limpeza</li></a><br>
+                    <a class="btn btn-button texto-cor-custom menu-esq-botao"><li>Padaria</li></a><br>
+                    <a class="btn btn-button texto-cor-custom menu-esq-botao"><li>Vinhos, Cervejas e Destilados</li></a><br>
                     <li>
-                        <div class="container">
-                            <div class="checkbox">
-                                <label class="form-check-label" for="itensPromocao">
-                                <input class="form-check-input" type="checkbox" value="" id="itensPromocao">
-                                Promoções
-                                </label>
-                            </div>
-                        </div>
-                        
-                </li>    
+                        <div class="checkbox">
+                            <label class="form-check-label" for="itensPromocao">
+                            <input class="form-check-input" type="checkbox" value="" id="itensPromocao">
+                            Promoções
+                            </label>
+                        </div> 
+                    </li>    
                 </ul>
             </div>
             
