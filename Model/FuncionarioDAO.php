@@ -31,8 +31,7 @@
             /*
             */
         }
-
-        public function 
+ 
         /**
          * Insere um Funcionario
          *

@@ -2,24 +2,25 @@
     require_once "ProdutoDAO.php";
 
     class Produto{
-        private $ID;
-        private $nome;
-        private $categoria;
-        private $valor;
-        private $promocao;
-        private $valorPromocao;
-        private $qtd;
+        private $idProduto;
+        private $txNomeProduto;
+        private $idCategoria;
+        private $vlProduto;
+        private $flPromocao;
+        private $vlPromocao;
         private $img;
-        private $descricao;
+        private $txDescricao;
 
-        public function visualizarProdutos(){
-            $produtoDAO = new ProdutoDAO();
-            return $produtoDAO->visualizarProdutos();
+        public static function visualizarProdutos(){
+            $listaProdutos = null;
+            $listaProdutos = ProdutoDAO::visualizarProdutos();
+            return $listaProdutos;
         }
 
-        public function selecionarCategoria($categoria){
-            $produtoDAO = new ProdutoDAO();
-            return $produtoDAO->selecionarCategoria($categoria);
+        public static function buscarProdutosPorCategoria($idCategoria){
+            $listaProdutos = null;
+            $listaProdutos = ProdutoDAO::buscarProdutosPorCategoria($idCategoria);
+            return $listaProdutos;
         }
 
         public function selecionarpromocao(){
@@ -28,121 +29,101 @@
         }
 
         /** GETS AND SETS
-         * Get the value of ID
+         * Get the value of idProduto
          */ 
-        public function getID()
+        public function getIdProduto()
         {
-                return $this->ID;
+                return $this->idProduto;
         }
 
         /**
-         * Set the value of ID
+         * Set the value of idProduto
          *
          * @return  self
          */ 
-        public function setID($ID)
+        public function setIdProduto($idProduto)
         {
-                $this->ID = $ID;
+                $this->idProduto = $idProduto;
 
                 return $this;
         }
 
         /**
-         * Get the value of nome
+         * Get the value of txNomeProduto
          */ 
-        public function getNome()
+        public function getNomeProduto()
         {
-                return $this->nome;
+                return $this->txNomeProduto;
         }
 
         /**
-         * Set the value of nome
+         * Set the value of txNomeProduto
          *
          * @return  self
          */ 
-        public function setNome($nome)
+        public function setNomeProduto($txNomeProduto)
         {
-                $this->nome = $nome;
+                $this->txNomeProduto = $txNomeProduto;
 
                 return $this;
         }
 
         /**
-         * Get the value of categoria
+         * Get the value of idCategoria
          */ 
-        public function getCategoria()
+        public function getIdCategoria()
         {
-                return $this->categoria;
+                return $this->idCategoria;
         }
 
         /**
-         * Set the value of categoria
+         * Set the value of idCategoria
          *
          * @return  self
          */ 
-        public function setCategoria($categoria)
+        public function setIdCategoria($idCategoria)
         {
-                $this->categoria = $categoria;
+                $this->idCategoria = $idCategoria;
 
                 return $this;
         }
 
         /**
-         * Get the value of valor
+         * Get the value of vlProduto
          */ 
-        public function getValor()
+        public function getVlProduto()
         {
-                return $this->valor;
+                return $this->vlProduto;
         }
 
         /**
-         * Set the value of valor
+         * Set the value of vlProduto
          *
          * @return  self
          */ 
-        public function setValor($valor)
+        public function setVlProduto($vlProduto)
         {
-                $this->valor = $valor;
+                $this->vlProduto = $vlProduto;
 
                 return $this;
         }
 
         /**
-         * Get the value of promocao
+         * Get the value of flPromocao
          */ 
-        public function getPromocao()
+        public function getFlPromocao()
         {
-                return $this->promocao;
+                return $this->flPromocao;
         }
 
         /**
-         * Set the value of promocao
+         * Set the value of flPromocao
          *
          * @return  self
          */ 
-        public function setPromocao($promocao)
+        public function setFlPromocao($flPromocao)
         {
-                $this->promocao = $promocao;
-
-                return $this;
-        }
-
-        /**
-         * Get the value of qtd
-         */ 
-        public function getQtd()
-        {
-                return $this->qtd;
-        }
-
-        /**
-         * Set the value of qtd
-         *
-         * @return  self
-         */ 
-        public function setQtd($qtd)
-        {
-                $this->qtd = $qtd;
+                $this->flPromocao = $flPromocao;
 
                 return $this;
         }
@@ -168,41 +149,41 @@
         }
 
         /**
-         * Get the value of descricao
+         * Get the value of txDescricao
          */ 
-        public function getDescricao()
+        public function getTxDescricao()
         {
-                return $this->descricao;
+                return $this->txDescricao;
         }
 
         /**
-         * Set the value of descricao
+         * Set the value of txDescricao
          *
          * @return  self
          */ 
-        public function setDescricao($descricao)
+        public function setTxDescricao($txDescricao)
         {
-                $this->descricao = $descricao;
+                $this->txDescricao = $txDescricao;
 
                 return $this;
         }
 
         /**
-         * Get the value of valorPromocao
+         * Get the value of vlPromocao
          */ 
-        public function getValorPromocao()
+        public function getVlPromocao()
         {
-                return $this->valorPromocao;
+                return $this->vlPromocao;
         }
 
         /**
-         * Set the value of valorPromocao
+         * Set the value of vlPromocao
          *
          * @return  self
          */ 
-        public function setValorPromocao($valorPromocao)
+        public function setVlPromocao($vlPromocao)
         {
-                $this->valorPromocao = $valorPromocao;
+                $this->vlPromocao = $vlPromocao;
 
                 return $this;
         }

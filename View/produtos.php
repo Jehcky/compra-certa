@@ -1,3 +1,19 @@
+<?php 
+    include_once '../compra-certa/Model/Produto.php';
+    include_once '../compra-certa/Model/Categoria.php';
+
+    include_once '../compra-certa/Controller/Categoria/ListarCategoriasController.php';
+    include_once '../compra-certa/Controller/Produto/ListarProdutosController.php';
+
+    $listar_categorias = new ListarCategoriasController();
+    $categorias = $listar_categorias->processaRequisicao();
+    $listar_produtos = new ListarProdutosController();
+    $produtos = $listar_produtos->processaRequisicao();
+
+
+    //var_dump($categorias);
+?>
+
 <div>
     <div class="row">
         <div class="container col-lg-10 col-lg-push-2 col-md-9 col-md-push-3 col-xs-12">
@@ -277,8 +293,11 @@
                 <br>
                 <ul class="list-unstyled">
                     <h4>DEPARTAMENTOS</h4>
-                    <a class="btn btn-button texto-cor-custom menu-esq-botao"><li>Todas as Categorias</li></a><br>
-                    <a class="btn btn-button texto-cor-custom menu-esq-botao"><li>Bebidas</li></a><br>
+                    <a class="btn btn-button texto-cor-custom menu-esq-botao" href="index.php?pagina=produtos&idCategoria=0"><li>TODAS AS CATEGORIAS</li></a><br>
+                    <?php foreach ($categorias as $categoria) { ?>
+                        <a class="btn btn-button texto-cor-custom menu-esq-botao" href="index.php?pagina=produtos&idCategoria=<?php echo $categoria['idCategoria'] ?>"><li><?php echo $categoria['txNomeCategoria'] ?></li></a><br>
+                    <?php } ?>
+                    <!-- <a class="btn btn-button texto-cor-custom menu-esq-botao"><li>Bebidas</li></a><br>
                     <a class="btn btn-button texto-cor-custom menu-esq-botao"><li>Beleza, Higiene e Saúde</li></a><br>
                     <a class="btn btn-button texto-cor-custom menu-esq-botao"><li>Carnes e Embutidos</li></a><br>
                     <a class="btn btn-button texto-cor-custom menu-esq-botao"><li>Chocolate, Doces e Guloseimas</li></a><br>
@@ -287,7 +306,8 @@
                     <a class="btn btn-button texto-cor-custom menu-esq-botao"><li>Horti-fruti</li></a><br>
                     <a class="btn btn-button texto-cor-custom menu-esq-botao"><li>Limpeza</li></a><br>
                     <a class="btn btn-button texto-cor-custom menu-esq-botao"><li>Padaria</li></a><br>
-                    <a class="btn btn-button texto-cor-custom menu-esq-botao"><li>Vinhos, Cervejas e Destilados</li></a><br>
+                    <a class="btn btn-button texto-cor-custom menu-esq-botao"><li>Vinhos, Cervejas e Destilados</li></a><br> -->
+                    
                     <li>
                         <div class="checkbox">
                             <label class="form-check-label" for="itensPromocao">
