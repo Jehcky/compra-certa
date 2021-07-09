@@ -7,7 +7,7 @@ class ListarProdutosController implements Icontroller{
     private $produtos;
 
     public function __construct(){
-        
+        return $this->processaRequisicao();
     }
 
 

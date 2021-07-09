@@ -12,26 +12,28 @@
         private $lstHistorico = array();
 
         public function visualizaPedidos($idPedido){
-            $pedidoDAO = new PedidoDAO();
-            $this = $pedidoDAO->visualizaPedido($idPedido);
-            $this->setLstProdutos($pedidoDAO->visualizaProdutos($idPedido));
-            $this->setLstHistorico($pedidoDAO->acompanhaPedido($idPedido));
+            $pedido = PedidoDAO::visualizaPedido($idPedido);
+            $this->idPedido = $pedido->getIdPedido();
+            $this->txObs = $pedido->getTxObs();
+            $this->vlValor = $pedido->getVlValor();
+            $this->txCliente = $pedido->getTxCliente();
+            $this->txEndereco = $pedido->getTxEndereco();
+            $this->nuAvaliacao = $pedido->getNuAvaliacao();
+            $this->setLstProdutos(PedidoDAO::visualizaProdutos($idPedido));
+            $this->setLstHistorico(PedidoDAO::acompanhaPedido($idPedido));
             return $this;
         }
 
         public function visualizaProdutos($idPedido){
-            $pedidoDAO = new PedidoDAO();
-            return $pedidoDAO->visualizaProdutos($idPedido);
+            return PedidoDAO::visualizaProdutos($idPedido);
         }
 
         public function acompanhaPedido($idPedido){
-            $pedidoDAO = new PedidoDAO();
-            return $pedidoDAO->acompanhaPedido($idPedido);
+            return PedidoDAO::acompanhaPedido($idPedido);
         }
 
-        public function avaliaPedido($pedido){
-            $pedidoDAO = new PedidoDAO();
-            return $pedidoDAO->avaliaPedido($pedido);
+        public function avaliaPedido($idPedido){
+            return PedidoDAO::avaliaPedido($idPedido);
         }
         /**
          * Get the value of idPedido

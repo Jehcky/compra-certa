@@ -11,21 +11,20 @@
         private $img;
         private $txDescricao;
 
+        public static function buscarProduto($idProduto){
+            return ProdutoDAO::buscarProduto($idProduto);
+        }
+
         public static function visualizarProdutos(){
-            $listaProdutos = null;
-            $listaProdutos = ProdutoDAO::visualizarProdutos();
-            return $listaProdutos;
+            return ProdutoDAO::visualizarProdutos();
         }
 
         public static function buscarProdutosPorCategoria($idCategoria){
-            $listaProdutos = null;
-            $listaProdutos = ProdutoDAO::buscarProdutosPorCategoria($idCategoria);
-            return $listaProdutos;
+            return ProdutoDAO::buscarProdutosPorCategoria($idCategoria);
         }
 
-        public function selecionarpromocao(){
-            $produtoDAO = new ProdutoDAO();
-            return $produtoDAO->selecionarPromocao();
+        public function selecionarPromocao(){
+            return ProdutoDAO::selecionarPromocao();
         }
 
         /** GETS AND SETS

@@ -8,12 +8,12 @@ class SelecionarCategoriaController implements Icontroller{
 
     public function __construct($categoria){
         $this->produto = new Produto();
-        $this->produto->setCategoria($categoria);
+        $this->produto->setIdCategoria($categoria);
         $this->processaRequisicao();
     }
 
     public function processaRequisicao(){
-        $listaProdutos = $this->produto->SelecionarCategoria($this->produto->getCategoria());
+        $listaProdutos = $this->produto->buscarProdutosPorCategoria($this->produto->getIdCategoria());
         require 'View/teste.php';
     }
 }

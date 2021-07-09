@@ -3,18 +3,20 @@
 
   class PedidoDAO{
 
-    public function visualizaPedido($idpedido){
+    public static function visualizaPedido($idPedido){
       /*
       SELECT E.idPedido AS pedido, A.txNomeCliente AS cliente, B.txRua AS endereco, E.vlTotal, E.nuAvaliacao, E.txObs 
       FROM tbcliente A, tbendereco B, tbpedido E 
       WHERE A.idCliente = B.idCliente
       AND E.idCliente = A.idCliente
       AND E.idEndereco = B.idEndereco
-      AND E.idPedido = $idpedido
+      AND E.idPedido = ''
       */
+      $pedido = new Pedido();
+      return $pedido;
     }
 
-    public function visualizaProdutos($idpedido){
+    public static function visualizaProdutos($idPedido){
       /*
       SELECT A.txNomeProduto AS produto, 
       CASE 
@@ -25,25 +27,25 @@
       FROM tbproduto A, tbitem_pedido B, tbpedido C
       WHERE C.idPedido = B.idPedido
       AND B.idProduto = A.idProduto
-      AND C.idPedido = $idpedido
+      AND C.idPedido = ''
       */
     }
 
-    public function acompanhaPedido($idpedido){
+    public static function acompanhaPedido($idPedido){
       /*
       SELECT A.dtEncaminhamento AS data, A.idSetor AS setor, A.idFuncionario AS funcionario 
       FROM tbhistorico A, tbpedido B 
       WHERE A.idPedido = B.idPedido
-      AND B.idPedido = $idpedido
+      AND B.idPedido = ''
       ORDER BY A.dtEncaminhamento
       */
     }
 
-    public function avaliaPedido($pedido){
+    public static function avaliaPedido($idPedido){
       /*
       UPDATE tbpedido
-      SET txAvaliacao = $pedido->getTxAvaliacao(), txObs = $pedido->getTxObs()
-      WHERE idPedido = $pedido->getIdPedido();
+      SET txAvaliacao = '', txObs = ''
+      WHERE idPedido = ''
       */
     }
   }

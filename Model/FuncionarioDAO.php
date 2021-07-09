@@ -17,18 +17,32 @@
             */
         }
 
-        public function exibeSetores(){
+        public function exibeSetores($idSetor){
             /*
+            SELECT idHistorico, idPedido, MAX(dtEncaminhamento)
+            FROM tbhistorico
+            WHERE idSetor = $idSetor
+            GROUP BY idPedido
             */
         }
 
-        public function avancaSetor(){
+        public function avancaSetor($idFuncionario, $idPedido){
             /*
+            INSERT INTO tbhistorico(dtEncaminhamento, idFuncionario, idPedido, idSetor)
+            SELECT CURRENT_TIME, $idFuncionario, idPedido, idSetor+1
+            FROM tbhistorico
+            WHERE idPedido = $idPedido
+            ORDER BY dtEncaminhamento DESC LIMIT 1
             */
         }
 
-        public function retornatSetor(){
-            /*
+        public function retornatSetor($idFuncionario, $idPedido){
+             /*
+            INSERT INTO tbhistorico(dtEncaminhamento, idFuncionario, idPedido, idSetor)
+            SELECT CURRENT_TIME, $idFuncionario, idPedido, idSetor-1
+            FROM tbhistorico
+            WHERE idPedido = $idPedido
+            ORDER BY dtEncaminhamento DESC LIMIT 1
             */
         }
  

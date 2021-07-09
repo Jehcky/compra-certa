@@ -13,24 +13,24 @@
             parent::__construct();
         }
 
-        public function rastreiaPedido($idPedido){
+        public function rastreiaPedido(){
             $funcionarioDAO = new FuncionarioDAO();
-            return $this->$funcionarioDAO->rastreiaPedidos($idPedido);
+            return $this->$funcionarioDAO->rastreiaPedidos();
         }
 
-        public function exibeSetores($idSetor){
+        public function exibeSetores(){
             $funcionarioDAO = new FuncionarioDAO();
-            return $this->$funcionarioDAO->exibeSetores($idSetor);
+            return $this->$funcionarioDAO->exibeSetores();
         }
 
-        public function avancaSetor($idFuncionario, $idPedido){
+        public function avancaSetor(){
             $funcionarioDAO = new FuncionarioDAO();
-            return $this->$funcionarioDAO->avancaSetor($idFuncionario, $idPedido);
+            return $this->$funcionarioDAO->avancaSetor();
         }
 
-        public function retornatSetor($idFuncionario, $idPedido){
+        public function retornatSetor(){
             $funcionarioDAO = new FuncionarioDAO();
-            return $this->$funcionarioDAO->retornatSetor($idFuncionario, $idPedido);
+            return $this->$funcionarioDAO->retornatSetor();
         }
 
         public function incluirFuncionario()
