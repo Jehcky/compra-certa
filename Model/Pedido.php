@@ -29,9 +29,9 @@
             return $pedidoDAO->acompanhaPedido($idPedido);
         }
 
-        public function avaliaPedido($idPedido){
+        public function avaliaPedido($pedido){
             $pedidoDAO = new PedidoDAO();
-            return $pedidoDAO->avaliaPedido($idPedido);
+            return $pedidoDAO->avaliaPedido($pedido);
         }
         /**
          * Get the value of idPedido

@@ -3,7 +3,7 @@
 require_once "Model/Pedido.php";
 require_once "Controller/Icontroller.php";
 
-class SelecionarCategoriaController implements Icontroller{
+class VisualizarPedidoController implements Icontroller{
     private $pedido;
 
     public function __construct($idPedido){

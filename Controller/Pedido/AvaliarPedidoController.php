@@ -3,7 +3,7 @@
 require_once "Model/Pedido.php";
 require_once "Controller/Icontroller.php";
 
-class SelecionarCategoriaController implements Icontroller{
+class AvaliarPedidoController implements Icontroller{
     private $pedido;
 
     public function __construct($idPedido, $nuAvaliacao, $txObs){
@@ -17,6 +17,7 @@ class SelecionarCategoriaController implements Icontroller{
     public function processaRequisicao(){
         $this->pedido->setNuAvaliacao($_POST['nuAvaliacao']);
         $this->pedido->setTxObs($_POST['txObs']);
+        $this->pedido->avaliaPedido($this->pedido);
         require 'View/teste.php';
     }
 }

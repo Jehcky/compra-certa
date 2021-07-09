@@ -1,11 +1,5 @@
  FRONT
  -login funcionario/gerente
- 
- FUNCIONARIO
- -rastear pedido
- -exibir setores
- -avançar setor
- -retornar setor
 
  GERENTE
  -relatorios:
