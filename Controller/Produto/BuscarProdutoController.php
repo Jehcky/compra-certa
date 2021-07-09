@@ -3,7 +3,7 @@
 require_once "Model/Produto.php";
 require_once "Controller/Icontroller.php";
 
-class SelecionarPromocaoController implements Icontroller{
+class BuscarProdutoController implements Icontroller{
     private $produto;
 
     public function __construct(){
@@ -11,8 +11,7 @@ class SelecionarPromocaoController implements Icontroller{
     }
 
     public function processaRequisicao(){
-        $listaProdutos = $this->produto->SelecionarPromocao();
-        return $listaProdutos;
+        return $this->produto->buscarProduto($_GET['idProduto']);
     }
 }
 ?>

@@ -5,21 +5,22 @@
       public static function buscarProduto($idProduto){
         try{
           $minhaConexao = Conexao::getConexao();
-          $comando = "select * from db_compra_certa.tbProduto where id=" . $idProduto;
+          $comando = "select * from db_compra_certa.tbProduto where idProduto=" . $idProduto;
           $sql = $minhaConexao->prepare($comando);
 
           $sql->execute();
           $result = $sql->setFetchMode(PDO::FETCH_ASSOC);
+          $linha = $sql->fetch(PDO::FETCH_ASSOC);
 
           $produto = new Produto();
-          $produto->setIdProduto($result['idProduto']);
-          $produto->setNomeProduto($result['txNomeProduto']);
-          $produto->setIdCategoria($result['idCategoria']);
-          $produto->setVlProduto($result['vlPreco']);
-          $produto->setFlPromocao($result['flPromocao']);
-          $produto->setVlPromocao($result['vlPreco_promocao']);
-          $produto->setImg($result['txImg_url']);
-          $produto->setTxDescricao($result['txDescricao']); 
+          $produto->setIdProduto($linha['idProduto']);
+          $produto->setTxNomeProduto($linha['txNomeProduto']);
+          $produto->setIdCategoria($linha['idCategoria']);
+          $produto->setVlPreco($linha['vlPreco']);
+          $produto->setFlPromocao($linha['flPromocao']);
+          $produto->setVlPrecoPromocao($linha['vlPreco_promocao']);
+          $produto->setTxImgUrl($linha['txImg_url']);
+          $produto->setTxDescricao($linha['txDescricao']); 
 
           return $produto;
         }
@@ -43,12 +44,12 @@
             while ($linha = $sql->fetch(PDO::FETCH_ASSOC)) {
               $produto = new Produto();
               $produto->setIdProduto($linha['idProduto']);
-              $produto->setNomeProduto($linha['txNomeProduto']);
+              $produto->setTxNomeProduto($linha['txNomeProduto']);
               $produto->setIdCategoria($linha['idCategoria']);
-              $produto->setVlProduto($linha['vlPreco']);
+              $produto->setVlPreco($linha['vlPreco']);
               $produto->setFlPromocao($linha['flPromocao']);
-              $produto->setVlPromocao($linha['vlPreco_promocao']);
-              $produto->setImg($linha['txImg_url']);
+              $produto->setVlPrecoPromocao($linha['vlPreco_promocao']);
+              $produto->setTxImgUrl($linha['txImg_url']);
               $produto->setTxDescricao($linha['txDescricao']);     
               $listaProdutos[$i] = $produto;
               $i++;
@@ -76,12 +77,12 @@
           while ($linha = $sql->fetch(PDO::FETCH_ASSOC)) {
             $produto = new Produto();
             $produto->setIdProduto($linha['idProduto']);
-            $produto->setNomeProduto($linha['txNomeProduto']);
+            $produto->setTxNomeProduto($linha['txNomeProduto']);
             $produto->setIdCategoria($linha['idCategoria']);
-            $produto->setVlProduto($linha['vlPreco']);
+            $produto->setVlPreco($linha['vlPreco']);
             $produto->setFlPromocao($linha['flPromocao']);
-            $produto->setVlPromocao($linha['vlPreco_promocao']);
-            $produto->setImg($linha['txImg_url']);
+            $produto->setVlPrecoPromocao($linha['vlPreco_promocao']);
+            $produto->setTxImgUrl($linha['txImg_url']);
             $produto->setTxDescricao($linha['txDescricao']);     
             $listaProdutos[$i] = $produto;
             $i++;
@@ -97,7 +98,7 @@
     public static function selecionarPromocao(){
       try{
           $minhaConexao = Conexao::getConexao();
-          $comando = "select * from db_compra_certa.tbProduto where promocao=1";
+          $comando = "select * from db_compra_certa.tbproduto where flPromocao=1";
           $sql = $minhaConexao->prepare($comando);
       
               
@@ -110,12 +111,12 @@
         while ($linha = $sql->fetch(PDO::FETCH_ASSOC)) {
           $produto = new Produto();
           $produto->setIdProduto($linha['idProduto']);
-          $produto->setNomeProduto($linha['txNomeProduto']);
+          $produto->setTxNomeProduto($linha['txNomeProduto']);
           $produto->setIdCategoria($linha['idCategoria']);
-          $produto->setVlProduto($linha['vlPreco']);
+          $produto->setVlPreco($linha['vlPreco']);
           $produto->setFlPromocao($linha['flPromocao']);
-          $produto->setVlPromocao($linha['vlPreco_promocao']);
-          $produto->setImg($linha['txImg_url']);
+          $produto->setVlPrecoPromocao($linha['vlPreco_promocao']);
+          $produto->setTxImgUrl($linha['txImg_url']);
           $produto->setTxDescricao($linha['txDescricao']);     
           $listaProdutos[$i] = $produto;
           $i++;

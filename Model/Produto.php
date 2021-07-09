@@ -5,11 +5,18 @@
         private $idProduto;
         private $txNomeProduto;
         private $idCategoria;
-        private $vlProduto;
+        private $vlPreco;
         private $flPromocao;
-        private $vlPromocao;
-        private $img;
+        private $vlPrecoPromocao;
+        private $txImgUrl;
         private $txDescricao;
+
+        public function getPreco(){
+            if($this->getFlPromocao() == 1){
+                return $this->getVlPrecoPromocao();
+            }
+            return $this->getVlPreco();
+        }
 
         public static function buscarProduto($idProduto){
             return ProdutoDAO::buscarProduto($idProduto);
@@ -23,8 +30,9 @@
             return ProdutoDAO::buscarProdutosPorCategoria($idCategoria);
         }
 
-        public function selecionarPromocao(){
+        public static function selecionarPromocao(){
             return ProdutoDAO::selecionarPromocao();
+            
         }
 
         /** GETS AND SETS
@@ -43,26 +51,6 @@
         public function setIdProduto($idProduto)
         {
                 $this->idProduto = $idProduto;
-
-                return $this;
-        }
-
-        /**
-         * Get the value of txNomeProduto
-         */ 
-        public function getNomeProduto()
-        {
-                return $this->txNomeProduto;
-        }
-
-        /**
-         * Set the value of txNomeProduto
-         *
-         * @return  self
-         */ 
-        public function setNomeProduto($txNomeProduto)
-        {
-                $this->txNomeProduto = $txNomeProduto;
 
                 return $this;
         }
@@ -88,26 +76,6 @@
         }
 
         /**
-         * Get the value of vlProduto
-         */ 
-        public function getVlProduto()
-        {
-                return $this->vlProduto;
-        }
-
-        /**
-         * Set the value of vlProduto
-         *
-         * @return  self
-         */ 
-        public function setVlProduto($vlProduto)
-        {
-                $this->vlProduto = $vlProduto;
-
-                return $this;
-        }
-
-        /**
          * Get the value of flPromocao
          */ 
         public function getFlPromocao()
@@ -123,26 +91,6 @@
         public function setFlPromocao($flPromocao)
         {
                 $this->flPromocao = $flPromocao;
-
-                return $this;
-        }
-
-        /**
-         * Get the value of img
-         */ 
-        public function getImg()
-        {
-                return $this->img;
-        }
-
-        /**
-         * Set the value of img
-         *
-         * @return  self
-         */ 
-        public function setImg($img)
-        {
-                $this->img = $img;
 
                 return $this;
         }
@@ -170,9 +118,9 @@
         /**
          * Get the value of vlPromocao
          */ 
-        public function getVlPromocao()
+        public function getVlPrecoPromocao()
         {
-                return $this->vlPromocao;
+                return $this->vlPrecoPromocao;
         }
 
         /**
@@ -180,9 +128,69 @@
          *
          * @return  self
          */ 
-        public function setVlPromocao($vlPromocao)
+        public function setVlPrecoPromocao($vlPrecoPromocao)
         {
-                $this->vlPromocao = $vlPromocao;
+                $this->vlPrecoPromocao = $vlPrecoPromocao;
+
+                return $this;
+        }
+
+        /**
+         * Get the value of vlPreco
+         */ 
+        public function getVlPreco()
+        {
+                return $this->vlPreco;
+        }
+
+        /**
+         * Set the value of vlPreco
+         *
+         * @return  self
+         */ 
+        public function setVlPreco($vlPreco)
+        {
+                $this->vlPreco = $vlPreco;
+
+                return $this;
+        }
+
+        /**
+         * Get the value of txImgUrl
+         */ 
+        public function getTxImgUrl()
+        {
+                return $this->txImgUrl;
+        }
+
+        /**
+         * Set the value of txImgUrl
+         *
+         * @return  self
+         */ 
+        public function setTxImgUrl($txImgUrl)
+        {
+                $this->txImgUrl = $txImgUrl;
+
+                return $this;
+        }
+
+        /**
+         * Get the value of txNomeProduto
+         */ 
+        public function getTxNomeProduto()
+        {
+                return $this->txNomeProduto;
+        }
+
+        /**
+         * Set the value of txNomeProduto
+         *
+         * @return  self
+         */ 
+        public function setTxNomeProduto($txNomeProduto)
+        {
+                $this->txNomeProduto = $txNomeProduto;
 
                 return $this;
         }

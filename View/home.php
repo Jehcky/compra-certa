@@ -60,117 +60,25 @@
     <div class="container-fluid">
         <div class="text-center"><h1>PROMOÇÕES</h1><br></div>
         <div class="row">
-            <div class="col-sm-1 col-sm-offset-1">
-            </div>
-            <div class="col-sm-2">
+        <?php for($i=0;$i<count($listaProdutos);$i++){ ?>
+            <div class="col-sm-3">
                 <div class="panel panel-custom">
                     <div class="panel-heading text-center">
-                        <span class="panel-nome-produto">PÃO DE QUEIJO - PERDIGÃO</span><br>
-                        <span class="panel-preco-produto">R$ 0,00</span>
+                        <span class="panel-nome-produto"><?php echo $listaProdutos[$i]->getTxNomeProduto();?></span><br>
+                        <p>
+                        <?php if($listaProdutos[$i]->getFlPromocao() == 1){?>
+                        de: R$ <?php echo $listaProdutos[$i]->getVlPreco() . " por:"; ?>
+                        <?php } ?>
+                        <span class="panel-preco-produto">R$ <?php echo $listaProdutos[$i]->getPreco();?></span>
+                        </p>
                     </div>
                     <div class="panel-body">
-                        <img src="https://brf.my.salesforce.com/servlet/servlet.ImageServer?id=0154A000024CgwCQAS&oid=00D410000012TJaEAM"
+                        <img src="<?php echo $listaProdutos[$i]->getTxImgUrl();?>"
                             class="img-responsive" alt="Image"></div>
-                    <div class="panel-footer text-center"><a href="?pagina=descricaoProduto" class="btn panel-button-comprar">Comprar</a></div>
+                    <div class="panel-footer text-center"><a href="?pagina=descricaoProduto&idProduto=<?php echo $listaProdutos[$i]->getIdProduto();?>" class="btn panel-button-comprar">Comprar</a></div>
                 </div>
             </div>
-            <div class="col-sm-2">
-                <div class="panel panel-custom">
-                    <div class="panel-heading text-center">
-                        <span class="panel-nome-produto">HOT POCKET X-PICANHA SADIA</span><br>
-                        <span class="panel-preco-produto">R$ 0,00</span>
-                    </div>
-                    <div class="panel-body">
-                        <img src="https://brf.my.salesforce.com/servlet/servlet.ImageServer?id=0154A000024Cgi0QAC&oid=00D410000012TJaEAM"
-                            class="img-responsive" alt="Image"></div>
-                    <div class="panel-footer text-center"><a href="?pagina=descricaoProduto" class="btn panel-button-comprar">Comprar</a></div>
-                </div>
-            </div>
-            <div class="col-sm-2">
-                <div class="panel panel-custom">
-                    <div class="panel-heading text-center">
-                        <span class="panel-nome-produto">NUGGETS FRANGO COM QUEIJO SADIA</span><br>
-                        <span class="panel-preco-produto">R$ 0,00</span>
-                    </div>
-                    <div class="panel-body">
-                        <img src="https://brf.my.salesforce.com/servlet/servlet.ImageServer?id=0154A000024CgjcQAC&oid=00D410000012TJaEAM"
-                            class="img-responsive" alt="Image"></div>
-                    <div class="panel-footer text-center"><a href="?pagina=descricaoProduto" class="btn panel-button-comprar">Comprar</a></div>
-                </div>
-            </div>
-            <div class="col-sm-2">
-                <div class="panel panel-custom">
-                    <div class="panel-heading text-center">
-                        <span class="panel-nome-produto">BISTECA (400G A 800G) - SADIA</span><br>
-                        <span class="panel-preco-produto">R$ 0,00</span>
-                    </div>
-                    <div class="panel-body">
-                        <img src="https://brf.my.salesforce.com/servlet/servlet.ImageServer?id=0154A000024CgorQAC&oid=00D410000012TJaEAM"
-                            class="img-responsive" alt="Image"></div>
-                    <div class="panel-footer text-center"><button class="btn panel-button-comprar">Comprar</button></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-1 col-sm-offset-1">
-            </div>
-            <div class="col-sm-2">
-                <div class="panel panel-custom">
-                    <div class="panel-heading text-center">
-                        <span class="panel-nome-produto">MISS DAISY - CHOCOLATE...</span><br>
-                        <span class="panel-preco-produto">R$ 0,00</span>
-                    </div>
-                    <div class="panel-body">
-                        <img src="https://brf.my.salesforce.com/servlet/servlet.ImageServer?id=0154A000024CghlQAC&oid=00D410000012TJaEAM"
-                            class="img-responsive" alt="Image"></div>
-                    <div class="panel-footer text-center"><button class="btn panel-button-comprar">Comprar</button></div>
-                </div>
-            </div>
-            <div class="col-sm-2">
-                <div class="panel panel-custom">
-                    <div class="panel-heading text-center">
-                        <span class="panel-nome-produto">CORAÇÃO TEMPERADO...</span><br>
-                        <span class="panel-preco-produto">R$ 0,00</span>
-                    </div>
-                    <div class="panel-body">
-                        <img src="https://brf.my.salesforce.com/servlet/servlet.ImageServer?id=0154A000024CgliQAC&oid=00D410000012TJaEAM"
-                            class="img-responsive" alt="Image"></div>
-                    <div class="panel-footer text-center"><button class="btn panel-button-comprar">Comprar</button></div>
-                </div>
-            </div>
-            <div class="col-sm-2">
-                <div class="panel panel-custom">
-                    <div class="panel-heading text-center">
-                        <span class="panel-nome-produto">BISTECA (400G A 800G) - SADIA</span><br>
-                        <span class="panel-preco-produto">R$ 0,00</span>
-                    </div>
-                    <div class="panel-body">
-                        <img src="https://brf.my.salesforce.com/servlet/servlet.ImageServer?id=0154A000024CgorQAC&oid=00D410000012TJaEAM"
-                            class="img-responsive" alt="Image">
-                    </div>
-                    <div class="panel-footer text-center">
-                        <span class="btn panel-button-comprar btnGridProdutos">Comprar</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-2">
-                <div class="panel panel-custom">
-                    <div class="panel-heading text-center">
-                        <span class="panel-nome-produto">BISTECA (400G A 800G) - SADIA</span><br>
-                        <span class="panel-preco-produto">R$ 0,00</span>
-                    </div>
-                    <div class="panel-body">
-                        <img src="https://brf.my.salesforce.com/servlet/servlet.ImageServer?id=0154A000024CgorQAC&oid=00D410000012TJaEAM"
-                            class="img-responsive" alt="Image">
-                    </div>
-                    <div class="panel-footer text-center">
-                        <button class="btn panel-button-comprar btnGridProdutos">Comprar</button>
-                    </div>
-                </div>
-            </div>
+        <?php } ?>
         </div>
     </div>
     <br>

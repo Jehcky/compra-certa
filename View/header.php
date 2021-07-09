@@ -33,34 +33,8 @@
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="?pagina=home">Principal</a></li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="produtosDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Produtos
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="produtosDropdown">
-                                <a class="dropdown-item nav-item" href="?pagina=produtos">Todas as categorias</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="?pagina=produtos">Bebidas</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="?pagina=produtos">Beleza Higiene e Saude</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="?pagina=produtos">Carnes e Embutidos</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="?pagina=produtos">Chocolate, Doces e Guloseimas</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="?pagina=produtos">Congelados</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="?pagina=produtos">Frios e Laticínios</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="?pagina=produtos">Hortifruti</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="?pagina=produtos">Limpeza</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="?pagina=produtos">Padaria</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="?pagina=produtos">Vinhos, Cervejas e Destilados</a>
-                            </div>
-                        </li>
-                        <li><a href="?pagina=produtos">Promoções</a></li>
+                        <li><a href="?pagina=produtos">Produtos</a></li>
+                        <li><a href="?pagina=produtos&idPromocao=1">Promoções</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="?pagina=cadastro"><span class="glyphicon glyphicon-user"></span> Cadastre-se</a></li>

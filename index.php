@@ -17,28 +17,6 @@ if(isset($_GET['acao'])){
             break;
     }
 }
-//-----------------CLIENTES
-
-//$controlador->processaRequisicao();
-
-/*
-
-$controlador->processaRequisicao();
-
-
-//-----------------PEDIDOS
-require "Controller/Produto/ListarProdutoController.php";
-$controlador = new ListarProdutoController();
-
-require "Controller/Produto/SelecionarCategoriaController.php";
-$controlador = new SelecionarCategoriaController(1);
-$controlador->processaRequisicao();
-
-require "Controller/Produto/SelecionarPromocaoController.php";
-$controlador = new SelecionarpromocaoController();
-$controlador->processaRequisicao();
-*/
-
 
 if(isset($_GET['pagina'])){
     $pagina = $_GET['pagina'];
@@ -63,6 +41,9 @@ else{
             break;
 
         case 'descricaoProduto':
+            require "Controller/Produto/BuscarProdutoController.php";
+            $controlador = new BuscarProdutoController();
+            $produto = $controlador->processaRequisicao();
             include 'View/descricaoProduto.php';
             break;
     
@@ -79,11 +60,20 @@ else{
             break;
                     
         case 'produtos':
+            include_once '../compra-certa/Controller/Categoria/ListarCategoriasController.php';
+            include_once '../compra-certa/Controller/Produto/ListarProdutosController.php';
+            $controlador = new ListarCategoriasController();
+            $categorias = $controlador->processaRequisicao();
+            $controlador = new ListarProdutosController();
+            $listaProdutos = $controlador->processaRequisicao();
             include 'View/produtos.php';
             break;
 
         default:
-            include 'View/home.php';
+            require "Controller/Produto/SelecionarPromocaoController.php";
+            $controlador = new SelecionarPromocaoController();
+            $listaProdutos = $controlador->processaRequisicao();
+            include 'View/Home.php';
             break;
     }
 
