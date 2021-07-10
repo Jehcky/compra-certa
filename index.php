@@ -32,16 +32,10 @@ else{
         case "add_item_carrinho":
             require "Controller/Carrinho/AddItemController.php";
             require_once 'Model/CarrinhoSession.php';
-            include_once '../compra-certa/Controller/Categoria/ListarCategoriasController.php';
-            include_once '../compra-certa/Controller/Produto/ListarProdutosController.php';
             $carrinhoSession = new CarrinhoSession();
             $controlador = new AddItemController($carrinhoSession);
             $controlador->processaRequisicao();
-            $controlador = new ListarCategoriasController();
-            $categorias = $controlador->processaRequisicao();
-            $controlador = new ListarProdutosController();
-            $listaProdutos = $controlador->processaRequisicao();
-            include 'View/produtos.php';
+            header('Location: ?pagina=produtos');
             break;
         break;
 
@@ -51,8 +45,7 @@ else{
             $carrinhoSession = new CarrinhoSession();
             $controlador = new AlteraQtdController($carrinhoSession);
             $controlador->processaRequisicao();
-
-            include 'View/home.php';            
+            header('Location: ?pagina=carrinho');            
             break;
         break;
         
@@ -62,8 +55,7 @@ else{
             $carrinhoSession = new CarrinhoSession();
             $controlador = new ApagaItemController($carrinhoSession);
             $controlador->processaRequisicao();
-
-            include 'View/home.php';
+            header('Location: ?pagina=carrinho');
             break;
 
         case 'cadastro':
