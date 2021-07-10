@@ -23,9 +23,9 @@
                 <h1 class="text-right">R$ <?php echo number_format($produto->getPreco(),2,',','.');?></h1>
                 <h3 class="text-center">QUANTIDADE:</h3>
             <br>
-            <form method="post" action="AddItemCarrinho" >
+            <form method="post" action="index.php?pagina=add_item_carrinho" >
                 <div class="form-group text-center">
-                <input type="number" id="qtdProduto" class="form-control" min="1" max="10" value="1">
+                <input type="number" name="quantidade" id="quantidade" class="form-control" min="1" max="100" value="1">
                 </div>
                 <br>
                 <br>

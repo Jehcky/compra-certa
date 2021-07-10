@@ -14,7 +14,7 @@ class AddItemController implements IController{
      public function processaRequisicao(){
         if (isset($_POST['id']) && preg_match("/^[0-9]+/",$_POST['id'])){
             //cria o objeto itemCarrinho
-            $itemCarrinho = new ItemCarrinho($_POST['id'],$_POST['qtdProduto']);
+            $itemCarrinho = new ItemCarrinho($_POST['id'],$_POST['quantidade']);
             //adiciona o itemCarrinho no carrinho
             $this->carrinhoSession->adicionar($itemCarrinho);
         }

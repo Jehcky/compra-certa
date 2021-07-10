@@ -17,19 +17,19 @@ class CarrinhoSession implements ICarrinho{
 
    public function adicionar($item){
     //adiciona um novo item no carrinho
-       $id = $item->getProduto()->getCodigo();
+       $id = $item->getProduto()->getIdProduto();
        if (!$this->estaNoCarrinho($id))
            $this->itens[$id] = $item;
        else
        //se o item já existir e for selecionado novamente, incrementa a quantidade em 1
-           $this->itens[$id]->setQuantidade($this->itens[$id]->getQuantidade()+1);
+           $this->itens[$id]->setQuantidade($this->itens[$id]->getQuantidade()+$item->getQuantidade());
    }
 
    public function atualizar($item){
     //altera um item do carrinho quando a quandidade é alterada
-    $id = $item->getProduto()->getCodigo();
+    $id = $item->getProduto()->getIdProduto();
     if ($this->estaNoCarrinho($id)){
-       if ($item->getquantidade()==0){
+       if ($item->getQuantidade()==0){
            $this->apagar($id);
            return;
        }

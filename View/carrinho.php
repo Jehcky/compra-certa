@@ -7,7 +7,6 @@
                     <tr>
                         <th></th>
                         <th class="text-left">Produto</th>
-                        <th class="text-center">Disponibilidade</th>
                         <th class="text-center">Quantidade</th>
                         <th class="text-right">Preço</th>
                         <th></th>
@@ -18,25 +17,23 @@
                     <tr>
                         <td><img src="<?php echo $item->getProduto()->getTxImgUrl(); ?>" style="width:auto;height:75px;"> </td>
                         <td><?php echo $item->getProduto()->getTxNomeproduto(); ?></td>
-                        <td class="text-center">Disponível</td>
-                        <td>
-                        <form action="CarrinhoAltQuant" method="post">
+                        <td class="text-center">
+                        <form action="index.php?pagina=carrinho_alt_quant" method="post">
                             <input type="hidden" name="id" value="<?php echo $item->getProduto()->getIdProduto(); ?>">
-                            <input type="text" name="quantidade" value="<?php echo $item->getQuantidade(); ?>" size="2" >
-                            <button type="submit" class="btn btn-primary btn-xs">Alterar</button>
+                            <input type="text" name="quantidade" value="<?php echo $item->getQuantidade(); ?>" size="1" ><br>
+                            <button type="submit" class="btn btn-sm btn-danger">Alterar</button>
                         </form>
                         </td>
-                        <td class="text-right">R$ <?php echo $item->getProduto()->getPreco() *  $item->getQuantidade();?></td>
+                        <td class="text-right">R$ <?php echo number_format($item->getProduto()->getPreco() * $item->getQuantidade(),2,',','.');?></td>
                         <td>
-                        <form method="post" action="ApagaItemCarrinho" >
+                        <form method="post" action="index.php?pagina=apaga_item_carrinho">
                             <input type="hidden" name="id" value="<?php echo $item->getProduto()->getIdProduto(); ?>">
-                            <input type="submit" class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
+                            <button type="submit" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
                         </form>
                          </td>
                     </tr>
                     <?php endforeach; ?>
                     <tr>
-                        <td></td>
                         <td></td>
                         <td></td>
                         <td></td>

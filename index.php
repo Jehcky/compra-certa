@@ -1,37 +1,71 @@
 <?php
 
-if(isset($_GET['acao'])){
-    $acao = $_GET['acao'];
-
-    switch($acao) {
-        // -------- CLIENTE
-        case 'inserir_cliente':
-            require "../compra-certa/Controller/Cliente/IncluirClienteController.php";
-            $controlador = new IncluirClienteController();
-            break;
-        case 'alterar_cliente':
-            require "../compra-certa/Controller/Cliente/AlterarClienteController.php";
-            $controlador = new AlterarClienteController();
-            break;
-        default:
-            break;
-    }
-}
+session_start();
 
 if(isset($_GET['pagina'])){
     $pagina = $_GET['pagina'];
-} else {
+}
+else{
     $pagina = 'home';
 }
  
 if($pagina == 'controleInterno'){
     include 'View/controleInterno.php';
 }
-
 else{
     include 'View/header.php';
     
     switch ($pagina) {
+
+        // -------- CLIENTE
+        case 'inserir_cliente':
+            require "../compra-certa/Controller/Cliente/IncluirClienteController.php";
+            $controlador = new IncluirClienteController();
+            break;
+
+        case 'alterar_cliente':
+            require "../compra-certa/Controller/Cliente/AlterarClienteController.php";
+            $controlador = new AlterarClienteController();
+            break;
+
+        // ------- CARRINHO
+        case "add_item_carrinho":
+            require "Controller/Carrinho/AddItemController.php";
+            require_once 'Model/CarrinhoSession.php';
+            include_once '../compra-certa/Controller/Categoria/ListarCategoriasController.php';
+            include_once '../compra-certa/Controller/Produto/ListarProdutosController.php';
+            $carrinhoSession = new CarrinhoSession();
+            $controlador = new AddItemController($carrinhoSession);
+            $controlador->processaRequisicao();
+            $controlador = new ListarCategoriasController();
+            $categorias = $controlador->processaRequisicao();
+            $controlador = new ListarProdutosController();
+            $listaProdutos = $controlador->processaRequisicao();
+            include 'View/produtos.php';
+            break;
+        break;
+
+        case "carrinho_alt_quant":
+            require "Controller/Carrinho/AlteraQtdController.php";
+            require_once 'Model/CarrinhoSession.php';
+            $carrinhoSession = new CarrinhoSession();
+            $controlador = new AlteraQtdController($carrinhoSession);
+            $controlador->processaRequisicao();
+
+            include 'View/home.php';            
+            break;
+        break;
+        
+        case "apaga_item_carrinho":
+            require "Controller/Carrinho/ApagaItemController.php";
+            require_once 'Model/CarrinhoSession.php';
+            $carrinhoSession = new CarrinhoSession();
+            $controlador = new ApagaItemController($carrinhoSession);
+            $controlador->processaRequisicao();
+
+            include 'View/home.php';
+            break;
+
         case 'cadastro':
             include 'View/cadastro.php';
             break;
@@ -40,34 +74,10 @@ else{
             require "Controller/Carrinho/ListaCarrinhoController.php";
             require_once 'Model/CarrinhoSession.php';
             $controlador = new ListaCarrinhoController();
-			$carrinho = $controlador->processaRequisicao();
+            $carrinho = $controlador->processaRequisicao();
             $itensCarrinho = $carrinho->getItensCarrinho();
             include 'View/carrinho.php';
             break;
-        
-        case "AdditemCarrinho":
-            require "Controller/AddItemController.php";
-            require_once 'Model/CarrinhoSession.php';
-            $carrinhoSession = new CarrinhoSession();
-            $controlador = new AddItemController($carrinhoSession);
-            $controlador->processaRequisicao();
-        break;
-
-        case "CarrinhoAltQuant":
-            require "Controller/AlteraQtdController.php";
-            require_once 'Model/CarrinhoSession.php';
-            $carrinhoSession = new CarrinhoSession();
-            $controlador = new AlteraQtdController($carrinhoSession);
-            $controlador->processaRequisicao();
-        break;
-
-        case "ApagaItemCarrinho":
-            require "Controller/ApagaItemController.php";
-            require_once 'Model/CarrinhoSession.php';
-            $carrinhoSession = new CarrinhoSession();
-            $controlador = new ApagaItemController($carrinhoSession);
-            $controlador->processaRequisicao();
-        break;
 
         case 'descricaoProduto':
             require "Controller/Produto/BuscarProdutoController.php";
@@ -105,6 +115,5 @@ else{
             include 'View/Home.php';
             break;
     }
-
     include 'view/footer.php';
 }
