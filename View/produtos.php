@@ -15,7 +15,7 @@
                                 <?php if($listaProdutos[$i]->getFlPromocao() == 1){?>
                                 de: R$ <?php echo $listaProdutos[$i]->getVlPreco() . " por:"; ?>
                                 <?php } ?>
-                                <span class="panel-preco-produto">R$ <?php echo $listaProdutos[$i]->getPreco();?></span>
+                                <span class="panel-preco-produto">R$ <?php echo number_format($listaProdutos[$i]->getPreco(),2,',','.');?></span>
                                 </p>
                             </div>
                             <div class="panel-body">

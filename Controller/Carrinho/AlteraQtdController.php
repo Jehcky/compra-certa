@@ -2,14 +2,13 @@
 
 require_once "Model/CarrinhoSession.php";
 require_once "Model/ItemCarrinho.php";
-require_once "IController.php";
+require_once "Controller/IController.php";
 
 class AlteraQtdController implements IController{
      private $carrinhoSession;     
      
      public function __construct($carrinhoSession){
          $this->carrinhoSession = $carrinhoSession;
-         $this->processaRequisicao();
      }
 
      public function processaRequisicao(){
@@ -19,10 +18,7 @@ class AlteraQtdController implements IController{
             //atualiza o itemCarrinho no carrinho
             $this->carrinhoSession->atualizar($itemCarrinho);
         }
-        header('Location:Carrinho', true,302);
-
-     }
-
+    }
 }
 
 ?>

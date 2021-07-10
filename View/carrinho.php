@@ -14,53 +14,34 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <?php foreach($itensCarrinho as $item): ?>
                     <tr>
-                        <td><img src="https://brf.my.salesforce.com/servlet/servlet.ImageServer?id=0154A000024CghlQAC&oid=00D410000012TJaEAM" style="width:auto;height:75px;"> </td>
-                        <td>Product Name Dada</td>
-                        <td class="text-center">In stock</td>
-                        <td><input class="form-control text-center" type="text" value="1"></td>
-                        <td class="text-right">R$124,90</td>
-                        <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
+                        <td><img src="<?php echo $item->getProduto()->getTxImgUrl(); ?>" style="width:auto;height:75px;"> </td>
+                        <td><?php echo $item->getProduto()->getTxNomeproduto(); ?></td>
+                        <td class="text-center">Disponível</td>
+                        <td>
+                        <form action="CarrinhoAltQuant" method="post">
+                            <input type="hidden" name="id" value="<?php echo $item->getProduto()->getIdProduto(); ?>">
+                            <input type="text" name="quantidade" value="<?php echo $item->getQuantidade(); ?>" size="2" >
+                            <button type="submit" class="btn btn-primary btn-xs">Alterar</button>
+                        </form>
+                        </td>
+                        <td class="text-right">R$ <?php echo $item->getProduto()->getPreco() *  $item->getQuantidade();?></td>
+                        <td>
+                        <form method="post" action="ApagaItemCarrinho" >
+                            <input type="hidden" name="id" value="<?php echo $item->getProduto()->getIdProduto(); ?>">
+                            <input type="submit" class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
+                        </form>
+                         </td>
                     </tr>
-                    <tr>
-                        <td><img src="https://brf.my.salesforce.com/servlet/servlet.ImageServer?id=0154A000024CgliQAC&oid=00D410000012TJaEAM" style="width:auto;height:75px;"> </td>
-                        <td>Product Name Toto</td>
-                        <td class="text-center">In stock</td>
-                        <td><input class="form-control text-center" type="text" value="1"></td>
-                        <td class="text-right">R$33,90</td>
-                        <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
-                    </tr>
-                    <tr>
-                        <td><img src="https://brf.my.salesforce.com/servlet/servlet.ImageServer?id=0154A000024CgorQAC&oid=00D410000012TJaEAM" style="width:auto;height:75px;"> </td>
-                        <td>Product Name Titi</td>
-                        <td class="text-center">In stock</td>
-                        <td><input class="form-control text-center" type="text" value="1"></td>
-                        <td class="text-right">R$70,00</td>
-                        <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>Sub-Total</td>
-                        <td class="text-right">R$255,90</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>Envio</td>
-                        <td class="text-right">R$6,90</td>
-                    </tr>
+                    <?php endforeach; ?>
                     <tr>
                         <td></td>
                         <td></td>
                         <td></td>
                         <td></td>
                         <td><strong>Total</strong></td>
-                        <td class="text-right"><strong>R$346,90</strong></td>
+                        <td class="text-right"><strong>R$ <?php echo number_format($carrinho->getTotal(),2,',','.'); ?></strong></td>
                     </tr>
                 </tbody>
             </table>

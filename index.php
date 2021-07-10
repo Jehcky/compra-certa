@@ -37,8 +37,37 @@ else{
             break;
 
         case 'carrinho':
+            require "Controller/Carrinho/ListaCarrinhoController.php";
+            require_once 'Model/CarrinhoSession.php';
+            $controlador = new ListaCarrinhoController();
+			$carrinho = $controlador->processaRequisicao();
+            $itensCarrinho = $carrinho->getItensCarrinho();
             include 'View/carrinho.php';
             break;
+        
+        case "AdditemCarrinho":
+            require "Controller/AddItemController.php";
+            require_once 'Model/CarrinhoSession.php';
+            $carrinhoSession = new CarrinhoSession();
+            $controlador = new AddItemController($carrinhoSession);
+            $controlador->processaRequisicao();
+        break;
+
+        case "CarrinhoAltQuant":
+            require "Controller/AlteraQtdController.php";
+            require_once 'Model/CarrinhoSession.php';
+            $carrinhoSession = new CarrinhoSession();
+            $controlador = new AlteraQtdController($carrinhoSession);
+            $controlador->processaRequisicao();
+        break;
+
+        case "ApagaItemCarrinho":
+            require "Controller/ApagaItemController.php";
+            require_once 'Model/CarrinhoSession.php';
+            $carrinhoSession = new CarrinhoSession();
+            $controlador = new ApagaItemController($carrinhoSession);
+            $controlador->processaRequisicao();
+        break;
 
         case 'descricaoProduto':
             require "Controller/Produto/BuscarProdutoController.php";

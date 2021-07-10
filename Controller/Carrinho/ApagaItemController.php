@@ -2,14 +2,13 @@
 
 require_once "Model/CarrinhoSession.php";
 require_once "Model/ItemCarrinho.php";
-require_once "IController.php";
+require_once "Controller/IController.php";
 
 class ApagaItemController implements IController{
      private $carrinhoSession;     
      
      public function __construct($carrinhoSession){
          $this->carrinhoSession = $carrinhoSession;
-         $this->processaRequisicao();
      }
 
      public function processaRequisicao(){
@@ -17,9 +16,7 @@ class ApagaItemController implements IController{
             //apaga do carrinho
             $this->carrinhoSession->apagar($_POST['id']);
         }
-        header('Location:Carrinho', true,302);
      }
-
 }
 
 ?>

@@ -18,18 +18,19 @@
         <div class="col-sm-2">
                 <br><br><br><br>
                 <?php if($produto->getFlPromocao() == 1){?>
-                de: R$ <?php echo $produto->getVlPreco() . " por:"; ?>
+                de: R$ <?php echo number_format($produto->getVlPreco(),2,',','.') . " por:"; ?>
                 <?php } ?>
-                <h1 class="text-right">R$ <?php echo $produto->getPreco()?></h1>
+                <h1 class="text-right">R$ <?php echo number_format($produto->getPreco(),2,',','.');?></h1>
                 <h3 class="text-center">QUANTIDADE:</h3>
             <br>
-            <form>
+            <form method="post" action="AddItemCarrinho" >
                 <div class="form-group text-center">
-                    <input type="number" id="qtdProduto" class="form-control" min="1" max="10" value="1">
+                <input type="number" id="qtdProduto" class="form-control" min="1" max="10" value="1">
                 </div>
                 <br>
                 <br>
-                <a href="?pagina=carrinho" class="btn btn-block panel-button-comprar">ADICIONAR AO CARRINHO</a>
+                <input type="hidden" name="id" value="<?php echo $produto->getIdProduto();?>">
+                <input type="submit" class="btn btn-block panel-button-comprar" value= "ADICIONAR AO CARRINHO">
             </form>
         </div>
     </div>

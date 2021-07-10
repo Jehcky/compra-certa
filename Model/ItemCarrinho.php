@@ -19,7 +19,7 @@ class ItemCarrinho{
        return $this->quantidade;
    }
    public function getSubTotal(){
-       return $this->produto->getVlProduto() * $this->quantidade;
+       return $this->produto->getVlPreco() * $this->quantidade;
    }
    public function setProduto($produto){
        $this->$produto = $produto;
@@ -27,6 +27,5 @@ class ItemCarrinho{
    public function setQuantidade($quantidade){
        $this->quantidade = $quantidade;
    }
-  
 }
 ?>
