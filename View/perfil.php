@@ -1,14 +1,3 @@
-<?php 
-
-    /*
-    include_once '../compra-certa/Model/Cliente.php';
-    include_once '../compra-certa/Controller/Cliente/BuscarClienteController.php';
-
-    $controller = new BuscarClienteController();
-    $cliente = $controller->processaRequisicao();
-    */
-    
-?>
 
 <!-- Centered Pills -->
 <div class="container-fluid">
@@ -75,13 +64,19 @@
             <br>
             <div class="container">
                 <div class="row text-center">
+                    <?php foreach ($enderecos as $endereco) { ?>
                     <div class="col-sm-4">
                         <div class="thumbnail">
                             <div class="caption">
-                                <h3>ENDEREÇO 1</h3>
-                                <p>Rua tal, nº 000, Centro, Salvador-BA</p>
+                                <h3>Endereço <?php echo $endereco['idEndereco'] ?></h3>
+                                <p>
+                                    <?php echo $endereco['txRua'] ?>, 
+                                    nº <?php echo $endereco['nuLogadouro'] ?>, 
+                                    <?php echo $endereco['txBairro'] ?>, 
+                                    <?php echo $endereco['txComplemento'] ?></p>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="enderecoRadios" id="endereco1" checked>
+                                    <input class="form-check-input" type="radio" name="enderecoRadios" id="endereco<?php echo $endereco['idEndereco'] ?>" 
+                                        <?php echo $endereco['flPrincipal'] == 0 ? '' : 'checked' ?>>
                                     <label class="form-check-label" for="endereco1">
                                         Endereço principal
                                     </label>
@@ -90,25 +85,11 @@
                             </div>
                         </div>
                     </div>
+                    <?php } ?>
                     <div class="col-sm-4">
                         <div class="thumbnail">
                             <div class="caption">
-                                <h3>ENDEREÇO 2</h3>
-                                <p>Rua tal, nº 000, Centro, Salvador-BA</p>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="enderecoRadios" id="endereco2">
-                                    <label class="form-check-label" for="endereco2">
-                                        Endereço principal
-                                    </label>
-                                </div>
-                                <p><a href="#" data-toggle="modal" data-target="#enderecoModal" class="btn btn-primary" role="button">Editar</a> <a href="#" class="btn btn-danger" role="button">Excluir</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="thumbnail">
-                            <div class="caption">
-                                <h3>ENDEREÇO 3</h3>
+                                <h3>NOVO ENDEREÇO</h3>
                                 <p>...</p>
                                 <p><a href="#" class="btn btn-success" role="button">Cadastrar</a>
                             </div>
