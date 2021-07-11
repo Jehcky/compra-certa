@@ -92,8 +92,13 @@ else{
                     
         case 'perfil':
             include_once "Controller/Cliente/BuscarClienteController.php";
-            $controlador = new BuscarClienteController();
-            $cliente = $controlador->processaRequisicao();
+            include_once 'Controller/Endereco/ListarEnderecosClienteController.php';
+            $buscarCliente = new BuscarClienteController();
+            $cliente = $buscarCliente->processaRequisicao();
+            $listarEnderecos = new ListarEnderecosClienteController();
+            $enderecos = $listarEnderecos->processaRequisicao();
+            //var_dump($enderecos);
+            //die;
             include 'View/perfil.php';
             break;
                     

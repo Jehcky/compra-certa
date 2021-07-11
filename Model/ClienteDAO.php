@@ -149,7 +149,7 @@ class ClienteDAO {
     }
     /**
      * Busca um Cliente pelo seu idCliente
-     * @param idCliente : int
+     * @param Int idLogin
      * @return Cliente
      */
     public static function buscarClientePorIdLogin($idLogin) : Cliente {
