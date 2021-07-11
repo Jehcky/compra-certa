@@ -11,8 +11,7 @@ class BuscarClienteController implements Icontroller{
     }
     
     public function processaRequisicao() : Cliente {
-        $this->cliente = Cliente::buscarClientePorId(1);
-        //$this->cliente = Cliente::buscarClientePorId($_SESSION['idCliente']);
+        $this->cliente = Cliente::buscarClientePorId($_GET['idCliente']);
         return $this->cliente;
     }
 }

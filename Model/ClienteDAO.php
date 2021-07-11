@@ -9,6 +9,7 @@ class ClienteDAO {
     /**
      * Insere um Cliente
      * @param Cliente
+     * @return idCliente
      */
     public static function inserirCliente(Cliente $cliente) {
         $conexao = null;
@@ -42,6 +43,7 @@ class ClienteDAO {
             $sql = $conexao->prepare($comando);
             $sql->execute();
             $idCliente = $conexao->lastInsertId();
+            
             $conexao->commit();
         }
         catch(PDOException $e) {

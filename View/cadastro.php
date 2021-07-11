@@ -51,7 +51,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading text-center"><h3>CADASTRO</h3></div>
                     <div class="panel-body">
-                        <form id="formcadastro" class="form-horizontal" title="Cadastro" action="index.php?acao=inserir_cliente" method="POST"
+                        <form id="formcadastro" class="form-horizontal" title="Cadastro" action="index.php?pagina=inserir_cliente" method="POST"
                             onsubmit="return validarFormulario(this);">
                             <div class="form-group">
                                 <label class="control-label col-sm-2" for="txNomeCliente">Nome Completo:</label>
