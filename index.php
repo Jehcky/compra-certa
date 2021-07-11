@@ -101,8 +101,6 @@ else{
             $cliente = $buscarCliente->processaRequisicao();
             $listarEnderecos = new ListarEnderecosClienteController();
             $enderecos = $listarEnderecos->processaRequisicao();
-            //var_dump($enderecos);
-            //die;
             include 'View/perfil.php';
             break;
                     
