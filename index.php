@@ -21,11 +21,15 @@ else{
         case 'inserir_cliente':
             require "../compra-certa/Controller/Cliente/IncluirClienteController.php";
             $controlador = new IncluirClienteController();
+            $idCliente = $controlador->processaRequisicao();
+            header('Location: ?pagina=perfil&idCliente=' . $idCliente);
+        
             break;
 
         case 'alterar_cliente':
             require "../compra-certa/Controller/Cliente/AlterarClienteController.php";
             $controlador = new AlterarClienteController();
+            $controlador->processaRequisicao();
             break;
 
         // ------- CARRINHO
@@ -87,6 +91,9 @@ else{
             break;
                     
         case 'perfil':
+            include_once "Controller/Cliente/BuscarClienteController.php";
+            $controlador = new BuscarClienteController();
+            $cliente = $controlador->processaRequisicao();
             include 'View/perfil.php';
             break;
                     

@@ -12,10 +12,10 @@ class Carrinho{
         return $this->quantidade;
     }
     public function setProduto($produto){
-        $this->produto = $produto
+        $this->produto = $produto;
     }
     public function setQuantidade($quantidade){
-        $this->quantidade = $quanidade;
+        $this->quantidade = $quantidade;
     }
  }
 

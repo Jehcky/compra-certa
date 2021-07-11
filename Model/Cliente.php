@@ -24,7 +24,7 @@ class Cliente extends Login
      */
     public function inserirCliente()
     {
-        ClienteDAO::inserirCliente($this);
+        return ClienteDAO::inserirCliente($this);
     }
 
     /**

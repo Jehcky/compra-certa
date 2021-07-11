@@ -5,10 +5,10 @@ require_once '../compra-certa/Controller/IController.php';
 
 class IncluirClienteController implements Icontroller{
     private $cliente;
+    public $idCliente;
     
     public function __construct(){
         $this->cliente = new Cliente();
-        $this->processaRequisicao();
     }
 
     public function processaRequisicao(){
@@ -24,8 +24,7 @@ class IncluirClienteController implements Icontroller{
         } else {
             $this->cliente->setFlReceberEmail("0");
         }
-        $this->cliente->inserirCliente($this);
-        require 'View/perfil.php';
+        return $this->cliente->inserirCliente($this);
         
     }
 }
