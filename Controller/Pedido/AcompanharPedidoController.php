@@ -14,7 +14,6 @@ class SelecionarCategoriaController implements Icontroller{
 
     public function processaRequisicao(){
         $historicoPedido = $this->pedido->acompanhaPedido($this->pedido->getIdPedido());
-        require 'View/teste.php';
     }
 }
 ?>

@@ -17,7 +17,6 @@ class SelecionarCategoriaController implements Icontroller{
     public function processaRequisicao(){
         $this->pedido->setNuAvaliacao($_POST['nuAvaliacao']);
         $this->pedido->setTxObs($_POST['txObs']);
-        require 'View/teste.php';
     }
 }
 ?>

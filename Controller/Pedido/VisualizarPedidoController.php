@@ -14,7 +14,6 @@ class SelecionarCategoriaController implements Icontroller{
 
     public function processaRequisicao(){
         $dadosPedido = $this->pedido->visualizaPedidos($this->pedido->getIdPedido());
-        require 'View/teste.php';
     }
 }
 ?>

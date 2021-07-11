@@ -1,9 +1,12 @@
 <?php 
+
+    /*
     include_once '../compra-certa/Model/Cliente.php';
     include_once '../compra-certa/Controller/Cliente/BuscarClienteController.php';
 
     $controller = new BuscarClienteController();
     $cliente = $controller->processaRequisicao();
+    */
     
 ?>
 

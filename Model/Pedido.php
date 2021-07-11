@@ -11,17 +11,9 @@
         private $lstProdutos = array();
         private $lstHistorico = array();
 
-        public function visualizaPedidos($idPedido){
-            $pedido = PedidoDAO::visualizaPedido($idPedido);
-            $this->idPedido = $pedido->getIdPedido();
-            $this->txObs = $pedido->getTxObs();
-            $this->vlValor = $pedido->getVlValor();
-            $this->txCliente = $pedido->getTxCliente();
-            $this->txEndereco = $pedido->getTxEndereco();
-            $this->nuAvaliacao = $pedido->getNuAvaliacao();
-            $this->setLstProdutos(PedidoDAO::visualizaProdutos($idPedido));
-            $this->setLstHistorico(PedidoDAO::acompanhaPedido($idPedido));
-            return $this;
+        public function listaPedidos(){
+            $pedidos = PedidoDAO::listaPedidos();
+            return $pedidos;
         }
 
         public function visualizaProdutos($idPedido){
@@ -34,6 +26,14 @@
 
         public function avaliaPedido($idPedido){
             return PedidoDAO::avaliaPedido($idPedido);
+        }
+
+        public function addLstHistorico($data){
+            array_push($this->lstHistorico, $data);
+        }
+
+        public function addLstProdutos($data){
+            array_push($this->lstProdutos, $data);
         }
         /**
          * Get the value of idPedido

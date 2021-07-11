@@ -10,6 +10,10 @@ else{
 }
  
 if($pagina == 'controleInterno'){
+    //include 'View/controleLogin.php';
+    require "Controller/Pedido/ExibirSetoresController.php";
+    $controlador = new ExibirSetoresController();
+    $pedidos = $controlador->processaRequisicao();
     include 'View/controleInterno.php';
 }
 else{
