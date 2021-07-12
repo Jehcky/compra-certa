@@ -1,6 +1,5 @@
 <?php
 
-//require "Model/ItemCarrinho.php";
 require_once "Model/CarrinhoSession.php";
 require_once "Model/ItemCarrinho.php";
 require_once "Controller/IController.php";

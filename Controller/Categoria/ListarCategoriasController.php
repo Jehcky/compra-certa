@@ -6,10 +6,8 @@ require_once "Controller/Icontroller.php";
 class ListarCategoriasController implements Icontroller{
     private $categorias;
 
-    public function __construct(){
-        
+    public function __construct(){  
     }
-
 
     public function processaRequisicao() {
         $this->categorias = Categoria::listarCategorias();

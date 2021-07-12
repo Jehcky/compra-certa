@@ -30,7 +30,7 @@
                 <br>
                 <br>
                 <input type="hidden" name="id" value="<?php echo $produto->getIdProduto();?>">
-                <input type="submit" class="btn btn-block panel-button-comprar" value= "ADICIONAR AO CARRINHO">
+                <input type="submit" class="btn btn-block panel-button-comprar" value="ADICIONAR AO CARRINHO">
             </form>
         </div>
     </div>

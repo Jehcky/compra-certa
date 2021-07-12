@@ -58,14 +58,14 @@
                     <h4 class="modal-title text-center">LOGIN</h4>
                 </div>
                 <div class="modal-body">
-                    <form>
+                    <form method="post" action="index.php?pagina=login">
                         <div class="form-group">
-                            <input type="email" class="form-control" id="email1" placeholder="Seu email..." required>
+                            <input type="text" class="form-control" id="login" name="login" placeholder="Seu usuario..." required>
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control" id="password1" placeholder="Sua senha..." required>
+                            <input type="password" class="form-control" id="senha" name="senha" placeholder="Sua senha..." required>
                         </div>
-                        <a type="submit" class="btn btn-block panel-button-comprar" href="?pagina=perfil">Login</a>
+                        <input type="submit" class="btn btn-block panel-button-comprar" value="Login">
                     </form>
                     <div class="modal-footer d-flex justify-content-center">
                         <div class="signup-section text-center">Não é cadastrado ainda? <a href="?pagina=cadastro" class="text-info"> Cadastre-se aqui</a>.</div>

@@ -1,8 +1,11 @@
+
+<script type="text/javascript" src="View/js/pagamento.js"></script>
+
 <div class="container">
     <div class="row">
         <div class="col-md-8">
           <h4 class="mb-3">Endereço de cobrança</h4>
-          <form class="needs-validation was-validated" novalidate="">
+          <form class="needs-validation was-validated" novalidate="" action="/Compra-Certa/index.php?pagina=finaliza" method="post">
             <div class="row">
               <div class="col-md-6 mb-3">
                 <label for="primeiroNome">Nome</label>
@@ -28,17 +31,10 @@
               </div>
             </div>
 
-            <div class="mb-3">
-              <label for="endereco">Endereço</label>
-              <input type="text" class="form-control" id="endereco" placeholder="Rua dos bobos, nº 0" required="">
-              <div class="invalid-feedback">
-                Por favor, insira seu endereço de cobrança.
-              </div>
-            </div>
             <br>
             <div class="mb-3">
-                <select name="Endereco" class="form-control">
-                    <option selected>Escolha o endereço</option>
+                <select id="enderecoSelect" name="enderecoSelect" class="form-control" onchange="enderecoSelectHandler()">
+                    <option selected value='0'>Escolha o endereço</option>
                     <option value="endereco1">Endereço cadastrado 1</option>
                     <option value="endereco2">Endereço cadastrado 2</option>
                     <option value="endereco3">Endereço cadastrado 3</option>
@@ -48,7 +44,14 @@
               </div>
             </div>
 
-        
+            <div class="mb-3" id='enderecoInput'>
+              <label for="endereco">Endereço</label>
+              <input type="text" class="form-control" id="endereco" placeholder="Rua dos bobos, nº 0" required="">
+              <div class="invalid-feedback">
+                Por favor, insira seu endereço de cobrança.
+              </div>
+            </div>
+
             <hr class="mb-4">
             <div class="custom-control custom-checkbox">
               <input type="checkbox" class="custom-control-input" id="mesmo-endereco">
@@ -102,40 +105,27 @@
               </div>
             </div>
             <hr class="mb-4">
-            <button class="btn btn-success btn-lg btn-block" type="submit">Efetuar Pagamento</button>
+            <button class="btn btn-success btn-lg btn-block" type="submit" href="?pagina=home">Efetuar Pagamento</button>
           </form>
         </div>
 
         <div class="col-md-4">
           <h4 class="d-flex justify-content-between align-items-center mb-3">
             <span class="text-muted">Seu carrinho</span>
-            <span class="badge badge-secondary badge-pill">3</span>
+            <span class="badge badge-secondary badge-pill"><?php echo count($itensCarrinho);?></span>
           </h4>
           <ul class="list-group mb-3">
+            <?php foreach($itensCarrinho as $item) {?>
             <li class="list-group-item d-flex justify-content-between lh-condensed">
               <div>
-                <h6 class="my-0">Nome do produto</h6>
-                <small class="text-muted">Breve descrição</small>
+                <h6 class="my-0"><?php echo $item->getProduto()->getTxNomeproduto(); ?></h6>
+                <small class="text-muted">Quantidade: <?php echo $item->getQuantidade(); ?></small>
               </div>
-              <span class="text-muted">R$12</span>
+              <span class="text-muted">R$ <?php echo number_format($item->getProduto()->getPreco() * $item->getQuantidade(),2,',','.');?></span>
             </li>
-            <li class="list-group-item d-flex justify-content-between lh-condensed">
-              <div>
-                <h6 class="my-0">Segundo produto</h6>
-                <small class="text-muted">Breve descrição</small>
-              </div>
-              <span class="text-muted">R$8</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between lh-condensed">
-              <div>
-                <h6 class="my-0">Terceiro item</h6>
-                <small class="text-muted">Breve descrição</small>
-              </div>
-              <span class="text-muted">R$5</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between">
-              <span>Total (BRL)</span>
-              <strong>R$25</strong>
+            <?php } ?>
+              <span>Total </span>
+              <strong>R$ <?php echo number_format($carrinho->getTotal(),2,',','.'); ?></strong>
             </li>
           </ul>
         </div>
