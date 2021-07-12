@@ -104,6 +104,53 @@
     public static function refazPedido($idPedido){
 
     }
+
+    /**
+     * Lista todos os pedidos de um determinado Cliente
+     *
+     * @param Int $idCliente Id do Cliente
+     * @return Array<Pedido>
+     * @throws PDOException
+     **/
+    public static function listarPedidosCliente($idCliente)
+    {
+        $listaPedidos = array();
+        $conexao = null;
+        $sql = null;
+        try {
+            $conexao = Conexao::getConexao();
+            $comando = " SELECT "
+                . " idPedido, "
+                //. " idEndereco, "
+                . " vlTotal, "
+                . " nuAvaliacao, "
+                . " txObs "
+                . " FROM tbPedido "
+                . " WHERE idCliente = " . $idCliente;
+            $sql = $conexao->prepare($comando);
+            $sql->execute();
+            $dados = $sql->fetchAll();
+
+            $contador = 0;
+            foreach ($dados as $dado) {
+                $pedido = new Pedido();
+                $pedido->setIdPedido($dado['idPedido']);
+                $pedido->setVlValor($dado['vlTotal']);
+                $pedido->setNuAvaliacao($dado['nuAvaliacao']);
+                $pedido->setTxObs($dado['txObs']);
+                $listaPedidos[$contador] = $pedido;
+                $contador++;
+            }
+        }
+        catch (PDOException $e) {
+            throw $e;
+        }
+        finally {
+            $conexao = null;
+            $sql = null;
+            return $listaPedidos;
+        }
+    }
   }
 ?>
 

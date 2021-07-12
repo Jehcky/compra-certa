@@ -35,6 +35,13 @@
         public function addLstProdutos($data){
             array_push($this->lstProdutos, $data);
         }
+
+
+        public static function listarPedidosCliente($idCliente)
+        {
+            return PedidoDAO::listarPedidosCliente($idCliente);
+        }
+
         /**
          * Get the value of idPedido
          */ 

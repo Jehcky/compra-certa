@@ -107,6 +107,7 @@
             <br>
             <div class="container">
                 <div class="panel-group" id="accordion">
+                    <?php foreach($pedidos as $pedido) { ?>
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h4 class="panel-title">
@@ -124,7 +125,7 @@
                         <div id="pedido1" class="panel-collapse collapse in">
                             <div class="panel-body">
                                 <div class="col-md-4">
-                                    <h5>Pedido 12-265387</h5>
+                                    <h5>Pedido <?php echo $pedido->getIdPedido(); ?></h5>
                                         <p>2x Bistecas      R$ 24,00</p>
                                         <p>18x Pães         R$ 15,60</p>
                                         <p>1x Escova        R$  9,00</p>
@@ -132,87 +133,20 @@
                                 <div class="col-md-4"></div>
                                 <div class="col-md-4 text-center">
                                     <div class="row">
-                                        <h4>TOTAL: R$ 48,60</h4>
+                                        <h4>TOTAL: R$ <?php echo $pedido->getVlValor() ?></h4>
                                         <br>
                                         <br>
                                         <h4>Avaliação: Muito bom!</h4>
-                                        <p>obs: Muito bom, entrega rapido, tudo certinho, adorei!</p>
+                                        <p>obs: <?php echo $pedido->getTxObs() ?></p>
+                                        <!-- <a class="btn btn-button btn-danger">Cancelar</a> -->
+                                        <a href="#" role="button" class="btn btn-button btn-success" data-toggle="modal" data-target="#avaliacaoModal"> Avaliar </a>
                                         <a class="btn btn-button btn-primary">Repetir pedido</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <div class="row" data-toggle="collapse" data-parent="#accordion" href="#pedido1">
-                                    <div class="col-sm-4">
-                                        <p>Pedido entregue</p>
-                                    </div>
-                                    <div class="col-sm-6"></div>
-                                    <div class="col-sm-2 text-center">
-                                        <p>01/04/2021</p>
-                                    </div>
-                                </div>
-                            </h4>
-                        </div>
-                        <div id="pedido1" class="panel-collapse collapse in">
-                            <div class="panel-body">
-                                <div class="col-md-4">
-                                    <h5>Pedido 12-265351</h5>
-                                        <p>2x Bistecas      R$ 24,00</p>
-                                        <p>18x Pães         R$ 15,60</p>
-                                        <p>1x Escova        R$  9,00</p>
-                                </div>
-                                <div class="col-md-4"></div>
-                                <div class="col-md-4 text-center">
-                                    <div class="row">
-                                        <h4>TOTAL: R$ 48,60</h4>
-                                        <br>
-                                        <br>
-                                        <br>
-                                        <a class="btn btn-button btn-success" data-toggle="modal" data-target="#avaliacaoModal">Avaliar</a> <a class="btn btn-button btn-primary">Repetir pedido</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <div class="row" data-toggle="collapse" data-parent="#accordion" href="#pedido2">
-                                    <div class="col-sm-4">
-                                        <p>Pedido encaminhado</p>
-                                    </div>
-                                    <div class="col-sm-6"></div>
-                                    <div class="col-sm-2 text-center">
-                                        <p>12/03/2021</p>
-                                    </div>
-                                </div>
-                            </h4>
-                        </div>
-                        <div id="pedido2" class="panel-collapse collapse in">
-                            <div class="panel-body">
-                                <div class="col-md-4">
-                                    <h5>Pedido 12-265306</h5>
-                                    <p>2x Bistecas      R$ 24,00</p>
-                                    <p>18x Pães         R$ 15,60</p>
-                                    <p>1x Escova        R$  9,00</p>
-                                </div>
-                                <div class="col-sm-4"></div>
-                                <div class="col-md-4 text-center">
-                                    <div class="row">
-                                        <h4>TOTAL: R$ 48,60</h4>
-                                        <br>
-                                        <br>
-                                        <br>
-                                        <a class="btn btn-button btn-danger">Cancelar</a> <a class="btn btn-button btn-success">Rastrear</a> <a class="btn btn-button btn-primary">Repetir pedido</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <?php } ?>
                 </div>
                 </div>
             </div>
@@ -293,6 +227,7 @@
                         <label for="exampleFormControlTextarea1">Observações</label>
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
                     </div>
+                    
                     <a class="btn btn-block btn-danger" href="#">Cancelar</a> <a type="submit" class="btn btn-block btn-success" href="#">Salvar</a>
                 </form>
             </div>
