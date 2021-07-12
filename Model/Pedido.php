@@ -11,6 +11,11 @@
         private $lstProdutos = array();
         private $lstHistorico = array();
 
+        public function realizaPedido($pedido){
+            $resposta = PedidoDAO::realizaPedido($pedido);
+            return $resposta;
+        }
+
         public function listaPedidos(){
             $pedidos = PedidoDAO::listaPedidos();
             return $pedidos;

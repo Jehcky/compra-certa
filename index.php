@@ -1,6 +1,8 @@
 <?php
 
 session_start();
+//var_dump($_SESSION['carrinho2']);
+//var_dump($_SESSION['login']);
 
 if(isset($_GET['pagina'])){
     $pagina = $_GET['pagina'];
@@ -17,7 +19,12 @@ if($pagina == 'controleInterno'){
     include 'View/controleInterno.php';
 }
 else{
-    include 'View/header.php';
+    if(!isset($_SESSION["login"])){
+        include 'View/header.php';
+    }
+    else{
+        include 'View/headerLogin.php';
+    }
     
     switch ($pagina) {
 
@@ -27,7 +34,6 @@ else{
             $controlador = new IncluirClienteController();
             $idCliente = $controlador->processaRequisicao();
             header('Location: ?pagina=perfil&idCliente=' . $idCliente);
-        
             break;
 
         case 'alterar_cliente':
@@ -87,6 +93,11 @@ else{
             break;
     
         case 'pagamento':
+            require "Controller/Carrinho/ListaCarrinhoController.php";
+            require_once 'Model/CarrinhoSession.php';
+            $controlador = new ListaCarrinhoController();
+            $carrinho = $controlador->processaRequisicao();
+            $itensCarrinho = $carrinho->getItensCarrinho();
             include 'View/pagamento.php';
             break;
 
@@ -118,6 +129,30 @@ else{
             include 'View/produtos.php';
             break;
 
+        case 'finaliza':
+            $_SESSION['carrinho2'] = NULL;
+            header('Location: ?pagina=home');
+            break;
+
+        case 'login':
+            require "Controller/Cliente/LoginController.php";
+            require_once 'Model/LoginSession.php';
+            $controlador = new LoginController();
+            $cliente = $controlador->processaRequisicao();
+            if(is_null($cliente)){
+                $_SESSION['login'] = NULL;
+                header('Location: ?pagina=home');
+            }
+            else{
+                header('Location: ?pagina=perfil&idCliente=' . $cliente->getIdCliente());
+            }
+            break;
+        
+        case 'logout':
+            $_SESSION['carrinho2'] = NULL;
+            $_SESSION['login'] = NULL;
+            header('Location: ?pagina=home');
+            break;
         default:
             require "Controller/Produto/SelecionarPromocaoController.php";
             $controlador = new SelecionarPromocaoController();

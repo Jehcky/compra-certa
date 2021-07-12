@@ -38,6 +38,7 @@
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="?pagina=perfil"><span class="glyphicon glyphicon-user"></span> Perfil</a></li>
+                        <li><a href="?pagina=logout"><span class="glyphicon glyphicon-log-out"></span> LogOut</a></li>
                         <li><a href="?pagina=carrinho"><span class="glyphicon glyphicon-shopping-cart"></span> Carrinho</a>
                         </li>
                     </ul>

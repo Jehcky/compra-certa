@@ -67,10 +67,10 @@ class CarrinhoSession implements ICarrinho{
        // verifica se esse carrinho existe na sessão
        // se sim retorna o carrinho, se não retorna um array vazio
        if (isset($_SESSION['carrinho2'])){
-           return unserialize($_SESSION['carrinho2']);
+            return unserialize($_SESSION['carrinho2']);
        }
        else
-         return array(); 
+            return array(); 
 
    }
 }
