@@ -3,6 +3,7 @@
         <div class="container col-lg-10 col-lg-push-2 col-md-9 col-md-push-3 col-xs-12">
             <div class="container-fluid">
                 <div class="row">
+                    <?php //var_dump($categorias) ?>
                     <h2 id="categoria">&emsp;Todas as Categorias</h2><br>
                 </div>
                 <div class="row">
@@ -39,8 +40,8 @@
                     <li>TODAS AS CATEGORIAS</li>
                 </a><br>
                 <?php foreach ($categorias as $categoria) { ?>
-                    <a class="btn btn-button texto-cor-custom menu-esq-botao" href="index.php?pagina=produtos&idCategoria=<?php echo $categoria['idCategoria'] ?>">
-                        <li><?php echo $categoria['txNomeCategoria'] ?></li>
+                    <a class="btn btn-button texto-cor-custom menu-esq-botao" href="index.php?pagina=produtos&idCategoria=<?php echo $categoria['idCategoria']; ?>">
+                        <li><?php echo $categoria['txNomeCategoria']; ?></li>
                     </a><br>
                 <?php } ?>
                 <li>
