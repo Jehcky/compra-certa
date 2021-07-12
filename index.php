@@ -1,8 +1,6 @@
 <?php
 
 session_start();
-//var_dump($_SESSION['carrinho2']);
-//var_dump($_SESSION['login']);
 
 if(isset($_GET['pagina'])){
     $pagina = $_GET['pagina'];

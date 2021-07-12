@@ -8,12 +8,11 @@
         $minhaConexao = Conexao::getConexao();
         $comando = "CREATE  PROCEDURE
         BEGIN
-        DECLARE ID INT
         INSERT INTO `tbpedido` (`idPedido`, `idCliente`, `idEndereco`, `vlTotal`, `nuAvaliacao`, `txObs`) VALUES (NULL,'" . $pedido->getTxCliente() . "', 1, '". $pedido->getVlValor() . "', NULL, NULL);";
         for($j=0;$j<count($pedido->getLstProdutos());$j++) {
-          $comando = $comando . "INSERT INTO `tbitem_pedido` (`idItem`, `idPedido`, `idProduto`, `nuQuantidade`) VALUES (NULL, ," . $pedido->getLstProdutos()[$j]['produto'] . "," . $pedido->getLstProdutos()[$j]['quantidade'] . ");";
+          $comando = $comando . "INSERT INTO `tbitem_pedido` (`idItem`, `idPedido`, `idProduto`, `nuQuantidade`) VALUES (NULL, SELECT MAX(idPedido) FROM tbpedido ," . $pedido->getLstProdutos()[$j]['produto'] . "," . $pedido->getLstProdutos()[$j]['quantidade'] . ");";
         }
-        $comando = $comando . "INSERT INTO `tbhistorico` (`idHistorico`, `idPedido`, `dtEncaminhamento`, `idSetor`, `idFuncionario`) VALUES (NULL, , CURRENT_DATE(), '1', NULL);
+        $comando = $comando . "INSERT INTO `tbhistorico` (`idHistorico`, `idPedido`, `dtEncaminhamento`, `idSetor`, `idFuncionario`) VALUES (NULL, SELECT MAX(idPedido) FROM tbpedido , CURRENT_DATE(), '1', NULL);
         END";
         $sql = $minhaConexao->prepare($comando);
         $sql->execute();
